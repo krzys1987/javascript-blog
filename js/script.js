@@ -6,22 +6,30 @@ document.getElementById('test-button').addEventListener('click', function(){
     const links = document.querySelectorAll('.titles a');
     console.log('links:', links);
   });
-*/
+  */
+
 
 //pasted from Kodilla, added console.log(event), added console.log(link),
 const titleClickHandler = function(event){
     console.log('Link was clicked!', event);
+}
 
-    /* remove class 'active' from all article links  */
-    const activeLinks = document.querySelectorAll('.titles a.active');
-
-    for(let activeLink of activeLinks){
+//remove class 'active' from all article links
+const activeLinks = document.querySelectorAll('.titles a.active');
+//dlaczego szukam w dokumencie .titles oraz a.active, skoro klasa to active
+for(let activeLink of activeLinks){
     activeLink.classList.remove('active');
 }
 
-    /* add class 'active' to the clicked link */
+//add class 'active' to the clicked link
+document.getElementsByClassName('list-titles').addEventListener('click', function(){
+    active.classList.add('active');
+});
 
     /* remove class 'active' from all articles */
+    const activeArticles  = document.querySelectorAll('.titles a.active');
+    for(let activeArticle of activeArticles){
+    activeLink.classList.remove('active');
 
     /* get 'href' attribute from the clicked link */
 
