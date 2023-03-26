@@ -21,10 +21,6 @@ for(let activeLink of activeLinks){
     activeLink.classList.remove('active');
 }
 
-//add class 'active' to the clicked link
-document.getElementsByClassName('list-titles').addEventListener('click', function(){
-    active.classList.add('active');
-});
 
     /* remove class 'active' from all articles */
     const activeArticles  = document.querySelectorAll('.titles a.active');
