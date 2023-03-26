@@ -22,21 +22,21 @@ for(let activeLink of activeLinks){
 }
 
 
-    /* remove class 'active' from all articles */
-    const activeArticles  = document.querySelectorAll('.titles a.active');
-    for(let activeArticle of activeArticles){
-    activeLink.classList.remove('active');
+/* remove class 'active' from all articles */
+const activeArticles  = document.querySelectorAll('.titles a.active');
+for(let activeArticle of activeArticles){
+activeLink.classList.remove('active');
 
-    /* get 'href' attribute from the clicked link */
+/* get 'href' attribute from the clicked link */
 
-    /* find the correct article using the selector (value of 'href' attribute) */
+/* find the correct article using the selector (value of 'href' attribute) */
 
-    /* add class 'active' to the correct article */
-  }
+/* add class 'active' to the correct article */
+  } //koniec funkcji remove 'active'
 
-  const links = document.querySelectorAll('.titles a');
+const links = document.querySelectorAll('.titles a');
 
-  for(let link of links){
+for(let link of links){
     link.addEventListener('click', titleClickHandler);
     console.log(link);
   }
