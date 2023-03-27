@@ -8,10 +8,13 @@
     console.log('links:', links);
   }); */
 
+  //[DONE] click & run event
   const titleClickHandler = function(event){
     const clickedElement = this;
     console.log('Link was clicked!', event);
   }
+
+  const activeLink = titleClickHandler(document.querySelectorAll('.titles a.active'));
 
   //[DONE] remove class 'active' from all article links
 
@@ -20,22 +23,17 @@
       activeLink.classList.remove('active');
   }
 
+
   //[IN PROGRESS] remove class 'active' from all articles
   const activeArticles = document.querySelectorAll('post-title post-author');
   for(let activeArticle of activeArticles){
     activeArticle.classList.remove('active');
   }
 
-  /* should move somewhere
-
-  //click event handler
-  const clickedElement = this;
-    activeLink.classList.add('active');
-
-    */
-
-  //[IN PROGRESS] add class 'active' to the clicked link
+  //[DONE] add class 'active' to the clicked link
   console.log('clickedElement:', this);
+    this.classList.add('active');
+
 
 
 //add class 'active' to the correct article
@@ -44,6 +42,9 @@
     link.addEventListener('click', titleClickHandler);
     console.log(link);
   }
+
+   //click event handler
+   activeLink.classList.add('active');
 
 }
 
