@@ -26,12 +26,16 @@
     activeArticle.classList.remove('active');
   }
 
+  /* should move somewhere
+
   //click event handler
   const clickedElement = this;
     activeLink.classList.add('active');
 
+    */
+
   //[IN PROGRESS] add class 'active' to the clicked link
-  console.log('clickedElement:', clickedElement);
+  console.log('clickedElement:', this);
 
 
 //add class 'active' to the correct article
