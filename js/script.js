@@ -3,17 +3,26 @@
   'use strict';
 
   /*
+  //[DONE]event to div add
   document.getElementById('test-button').addEventListener('click', function(){
     const links = document.querySelectorAll('.titles a');
     console.log('links:', links);
   }); */
 
-  //[DONE] click & run event
+  //[DONE] click & watch
   const titleClickHandler = function(event){
     const clickedElement = this;
     console.log('Link was clicked!', event);
   }
 
+  const links = document.querySelectorAll('.titles a');
+
+  for(let link of links){
+    link.addEventListener('click', titleClickHandler);
+    console.log(link);
+  }
+
+  //[DONE] what is activeLink
   const activeLink = titleClickHandler(document.querySelectorAll('.titles a.active'));
 
   //[DONE] remove class 'active' from all article links
@@ -24,27 +33,17 @@
   }
 
 
-  //[IN PROGRESS] remove class 'active' from all articles
+  //[DONE] remove class 'active' from all articles
   const activeArticles = document.querySelectorAll('post-title post-author');
   for(let activeArticle of activeArticles){
     activeArticle.classList.remove('active');
   }
 
-  //[DONE] add class 'active' to the clicked link
+  //[IN PROGRESS] add a class 'active' to the clicked link
+  //this.classList.add('active');
+  //clickedElement.classList.add('active');
   console.log('clickedElement:', this);
-    this.classList.add('active');
 
-
-
-//add class 'active' to the correct article
-  const links = document.querySelectorAll('.titles a');
-  for(let link of links){
-    link.addEventListener('click', titleClickHandler);
-    console.log(link);
-  }
-
-   //click event handler
-   activeLink.classList.add('active');
 
 }
 
