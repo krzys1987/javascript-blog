@@ -13,9 +13,9 @@
   const titleClickHandler = function(event){
     const clickedElement = this;
     console.log('Link was clicked!', event);
-  }
 
-  const links = document.querySelectorAll('.titles a');
+    //select .titles a
+    const links = document.querySelectorAll('.titles a');
 
   for(let link of links){
     link.addEventListener('click', titleClickHandler);
@@ -40,11 +40,12 @@
   }
 
   //[IN PROGRESS] add a class 'active' to the clicked link
-  //this.classList.add('active');
+  this.classList.add('active');
   //clickedElement.classList.add('active');
   console.log('clickedElement:', this);
 
 
+  }
 }
 
 
