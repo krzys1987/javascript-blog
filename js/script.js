@@ -34,7 +34,7 @@
 
 
   //[DONE] remove class 'active' from all articles
-  const activeArticles = document.querySelectorAll('post-title post-author');
+  const activeArticles = document.querySelectorAll('.post-title .post-author');
   for(let activeArticle of activeArticles){
     activeArticle.classList.remove('active');
   }
