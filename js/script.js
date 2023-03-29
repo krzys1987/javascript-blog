@@ -40,6 +40,22 @@ const titleClickHandler = function(event) {
   /* [IN PROGRESS] add class 'active' to the correct article */
   targetArticle.classList.add('active');
 
+  /* [IN PROGRESS] generate list title for articles */
+  // function generateTitleLinks(getElementById(article*)) {}
+  /* created HTML is HTML + const(with id article) */
+
+  //remove list titles
+
+  //find articles "id" and save it as const
+
+  //finf articles titles and save it as const
+  //querySelector(title)
+
+  //based on "id" and titles create html code and save it const
+  //use innerHTML to change htnl doc content, "read" attributes using getAttribute
+
+  //put the code at list title column | use innerHTML to add link to link list
+
 }
 
 const links = document.querySelectorAll('.titles a');
