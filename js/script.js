@@ -10,7 +10,7 @@ const titleClickHandler = function(event) {
   /* [DONE] remove class 'active' from all article links  */
 
   const activeLinks = document.querySelectorAll('.titles a.active');
-    for(let activeLink of activeLinks){
+  for(let activeLink of activeLinks){
     activeLink.classList.remove('active');
   }
 
@@ -21,7 +21,7 @@ const titleClickHandler = function(event) {
 
   /* [DONE] remove class 'active' from all articles */
   // const activeArticles = document.querySelectorAll('.post-title .post-author');
-  const activeArticles = document.querySelectorAll('.post .active');
+  const activeArticles = document.querySelectorAll('.post.active');
     for (let activeArticle of activeArticles) {
       activeArticle.classList.remove('active');
     }
@@ -55,67 +55,12 @@ const titleClickHandler = function(event) {
   /* [IN PROGRESS] generate list title for articles */
 
   // function generateTitleLinks(getElementById(article*)) {}
-  /* created HTML is HTML + const(with id article)
-  const Article-1 = {
-    title: "Article 1",
-    autor: Marion Berry,
-    id: "article-1"
-  }
-
-  const Article-2 = {
-    title: "Article 2 ",
-    autor: Theo Tabby,
-    id: "article-2"
-  }
-
-  const Article-3 = {
-    title: "Article 3 ",
-    autor: George Tuxedo,
-    id: "article-3"
-  }
-
-  const Article-4 = {
-    title: "Article 4",
-    autor: Kitty Toebean,
-    id: "article-4"
-  }
-
-  const Article-5 = {
-    title: "Article 5",
-    autor: Marion Berry,
-    id: "article-5"
-  }
-
-  const Article-6 = {
-    title: "Article 6",
-    autor: George Tuxedo,
-    id: "article-6"
-  }
-
-  const Article-7 = {
-    title: "Article 7",
-    autor: Kitty Toebean,
-    id: "article-7"
-  }
-
-  const Article-8 = {
-    title: "Article 8",
-    autor: Theo Tabby,
-    id: "article-8"
-  }
-
-  const Article-9 = {
-    title: "Article 9",
-    autor: Marion Berry,
-    id: "article-9"
-  }
-
-  const Article-10 = {
-    title: "Article 10",
-    autor: George Tuxedo,
-    id: "article-10"
-  }
-
+/* do it in order! */
+/*
+ const selectArticles = document.querySelectorAll(".post");
+ for(let post of selectArticles){
+  const findArticleId = post.getAttribute("id");
+ }
   //remove list titles
 
   //find articles "id" and save it as const
