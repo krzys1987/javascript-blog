@@ -52,11 +52,21 @@ const titleClickHandler = function(event) {
   const titleList = document.querySelector(optTitleListSelector);
   titleList.innerHTML = '';
 
-
-
-
-
   /* for each article */
+  const articles = document.querySelectorAll(optArticleSelector);
+
+  for(let articles of article-1);
+  for(let articles of article-2);
+  for(let articles of article-3);
+  for(let articles of article-4);
+  for(let articles of article-5);
+  for(let articles of article-6);
+  for(let articles of article-7);
+  for(let articles of article-8);
+  for(let articles of article-9);
+  for(let articles of article-10);
+
+
 
     /* get the article id */
 
