@@ -48,7 +48,7 @@ const titleClickHandler = function(event) {
 
   function generateTitleLinks(){
 
-  /* [DONE but disabled after clicked] remove contents of titleList */
+  /* [DONE but on after clicked] remove contents of titleList */
   const titleList = document.querySelector(optTitleListSelector);
   titleList.innerHTML = '';
 
@@ -69,8 +69,12 @@ const titleClickHandler = function(event) {
 
 
     /* get the article id */
+    const articleId = id;
 
     /* find the title element */
+    const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+    //What it does? Create a constant value which look for - article - class .post-title. Search target: html
+
 
     /* get the title from the title element */
 
