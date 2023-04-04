@@ -51,27 +51,35 @@
     const titleList = document.querySelector(optTitleListSelector);
     titleList.innerHTML = '';
 
+     /* [DONE] Create a single article */
+     const article = optArticleSelector;
+
     /* [DONE] for each article */
     const articles = document.querySelectorAll(optArticleSelector);
 
+    /* Variable scope */
+    let html = '';
+
     for(let article of articles){
-      console.log('article');
+      console.log('article && html');
     }
 
     /* [IN PROGRESS] get the article id */
     const articleId = article.getAttribute('href');
-    console.log(article.getAttribute('href'));
+    console.log(articleId);
 
-    /* [IN PROGRESS] find the title element */
+    /* [DONE] find the title element */
     const articleTitle = article.querySelector(optTitleSelector).innerHTML;
     //What it does? Create a constant value which look for - article - class .post-title. Search target: html
 
-    /* get the title from the title element */
+    /* [DONE] get the title from the title element */
 
     const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
-    console.log('<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>');
+    console.log('linkHTML');
 
     /* create HTML of the link */
+    titleList.innerHTML = titleList.innerHTML + linkHTML;
+
 
     /* insert link into titleList */
 
