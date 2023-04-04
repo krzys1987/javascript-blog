@@ -47,43 +47,17 @@
 
     function generateTitleLinks(){
 
-    /* [DONE but on after clicked] remove contents of titleList */
+    /* [DONE] remove contents of titleList */
     const titleList = document.querySelector(optTitleListSelector);
     titleList.innerHTML = '';
 
-    /* for each article */
+    /* [DONE] for each article */
     const articles = document.querySelectorAll(optArticleSelector);
 
-    for(let articles of article-1){
-      console.log('article-1');
+    for(let article of articles){
+      console.log('article');
     }
-    for(let articles of article-2){
-      console.log();
-    }
-    for(let articles of article-3){
-      console.log();
-    }
-    for(let articles of article-4){
-      console.log();
-    }
-    for(let articles of article-5){
-      console.log();
-    }
-    for(let articles of article-6){
-      console.log();
-    }
-    for(let articles of article-7){
-      console.log();
-    }
-    for(let articles of article-8){
-      console.log();
-    }
-    for(let articles of article-9){
-      console.log();
-    }
-    for(let articles of article-10){
-      console.log();
-    }
+
 
     /* get the article id */
     const articleId = id;
