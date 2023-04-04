@@ -58,11 +58,11 @@
       console.log('article');
     }
 
+    /* [IN PROGRESS] get the article id */
+    const articleId = article.getAttribute('href');
+    console.log(article.getAttribute('href'));
 
-    /* get the article id */
-    const articleId = id;
-
-    /* find the title element */
+    /* [IN PROGRESS] find the title element */
     const articleTitle = article.querySelector(optTitleSelector).innerHTML;
     //What it does? Create a constant value which look for - article - class .post-title. Search target: html
 
