@@ -85,19 +85,29 @@
   generateTitleLinks();
 
   function generateTags(){
-    /* find all articles */
+    /* [DONE] find all articles */
+    document.querySelectorAll("article");
 
-    /* START LOOP: for every article: */
+    /* [DONE] START LOOP: for every article: */
+    for(let article of articles){
 
-      /* find tags wrapper */
+    } //zakres petli na dół
 
-      /* make html variable with empty string */
 
-      /* get tags from data-tags attribute */
+      /* [in progress] find tags wrapper */
+      const optArticleTagsSelector = article.querySelector(post-tags /*list-horizontal*/);
 
-      /* split tags into array */
+      /* [DONE] make html variable with empty string */
+    let html = '';
 
-      /* START LOOP: for each tag */
+    /* [DONE] get tags from data-tags attribute */
+      const articleTags = article.getAttribute('data-tags');
+
+      /* [DONE] split tags into array */
+      const articleTagsArray = articleTags.split(' ');
+
+      /* [DONE] START LOOP: for each tag */
+      for(let tag of articleTagsArray){
 
         /* generate HTML of the link */
 
