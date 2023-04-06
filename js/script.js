@@ -56,7 +56,7 @@
     const articles = document.querySelectorAll(optArticleSelector);
 
     for (let article of articles) {
-      /* [IN PROGRESS] get the article id */
+      /* [DONE] get the article id */
        const articleId = article.getAttribute('id');
 
       console.log(articleId);
