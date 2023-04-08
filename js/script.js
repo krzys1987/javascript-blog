@@ -2,7 +2,7 @@
   //Strict Mode
   'use strict';
 
-  function titleClickHandler() {
+  const titleClickHandler = function() {
     const clickedElement = this;
     /* [DONE] remove class 'active' from all article links  */
 
@@ -35,7 +35,6 @@
 
     /* [DONE] add class 'active' to the correct article */
     targetArticle.classList.add('active');
-  }
 
   /* [DONE] define sript options */
   const optArticleSelector = '.post',
@@ -86,36 +85,38 @@
 
     /* [DONE] START LOOP: for every article: */
     for(let article of articles){
+
       /* [DONE] find tags wrapper */
-      const optArticleTagsSelector = article.querySelector(post-tags /*list-horizontal*/);
+      const tagWrapper = article.querySelector(optArticleTagsSelector);
 
+       /* [DONE] make html variable with empty string */
+      let html = '';
 
-    }
-
-
-
-      /* [DONE] make html variable with empty string */
-    let html = '';
-
-    /* [DONE] get tags from data-tags attribute */
+      /* [DONE] get tags from data-tags attribute */
       const articleTags = article.getAttribute('data-tags');
 
       /* [DONE] split tags into array */
-      const articleTagsArray = articleTags.split(' ');
+      const articleTagsArray = articleTags.split(' '); //tags are: 'news reviews design' changed 'news' 'reviews' 'design'
 
-      /* [DONE] START LOOP: for each tag */
+      /* [CHECK-IT] START LOOP: for each tag */
       for(let tag of articleTagsArray){
 
         /* generate HTML of the link */
+        const linkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
 
         /* add generated code to html variable */
+        html = html + linkHTML;
 
-      /* END LOOP: for each tag */
+        /* END LOOP: for each tag */
+      }
 
       /* insert HTML of all the links into the tags wrapper */
 
+      tagsWrapper.innerHTML = html;
+
     /* END LOOP: for every article: */
-  }
+    }
+  };
 
   generateTags();
 }
