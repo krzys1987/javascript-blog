@@ -27,7 +27,6 @@
     const articleSelector = clickedElement.getAttribute('href');
     console.log('articleSelector');
 
-
     /* [DONE] find the correct article using the selector (value of 'href' attribute) */
 
     const targetArticle = document.querySelector(articleSelector);
@@ -44,16 +43,13 @@
     optTitleListSelector = '.titles',
     optArticleTagsSelector = '.post-tags .list';
 
-  function generateTitleLinks() {
+  const generateTitleLinks = function() {
 
     /* [DONE] remove contents of titleList */
     const titleList = document.querySelector(optTitleListSelector);
     titleList.innerHTML = '';
 
-    /* [DONE] Create a single article */
-    const article = optArticleSelector;
-
-    /* [DONE] for each article */
+     /* [DONE] for each article */
     const articles = document.querySelectorAll(optArticleSelector);
 
     for (let article of articles) {
@@ -66,7 +62,7 @@
       const articleTitle = article.querySelector(optTitleSelector).innerHTML;
       //What it does? Create a constant value which look for - article - class .post-title. Search target: html
 
-      /* [DONE] get the title from the title element */
+      /* [CHECKT-IT] get the title from the title element */
 
       const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
       console.log('linkHTML');
@@ -84,18 +80,19 @@
 
   generateTitleLinks();
 
-  function generateTags(){
+  const generateTags = function() {
     /* [DONE] find all articles */
-    document.querySelectorAll("article");
+    const articles = document.querySelectorAll('article');
 
     /* [DONE] START LOOP: for every article: */
     for(let article of articles){
-
-    } //zakres petli na dół
-
-
-      /* [in progress] find tags wrapper */
+      /* [DONE] find tags wrapper */
       const optArticleTagsSelector = article.querySelector(post-tags /*list-horizontal*/);
+
+
+    }
+
+
 
       /* [DONE] make html variable with empty string */
     let html = '';
