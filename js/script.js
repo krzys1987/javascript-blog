@@ -35,6 +35,7 @@
 
     /* [DONE] add class 'active' to the correct article */
     targetArticle.classList.add('active');
+  };
 
   /* [DONE] define sript options */
   const optArticleSelector = '.post',
@@ -96,6 +97,7 @@
       const articleTags = article.getAttribute('data-tags');
 
       /* [DONE] split tags into array */
+      console.log(articleTags.split(' '));
       const articleTagsArray = articleTags.split(' '); //tags are: 'news reviews design' changed 'news' 'reviews' 'design'
 
       /* [CHECK-IT] START LOOP: for each tag */
@@ -110,9 +112,9 @@
         /* END LOOP: for each tag */
       }
 
-      /* insert HTML of all the links into the tags wrapper */
+        /* insert HTML of all the links into the tags wrapper */
 
-      tagsWrapper.innerHTML = html;
+        tagsWrapper.innerHTML = html;
 
     /* END LOOP: for every article: */
     }
