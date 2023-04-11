@@ -122,4 +122,60 @@
   };
 
   generateTags();
+
+  function tagClickHandler(event){
+    /* [DONE] prevent default action for this event */
+    tagClickHandler(event).preventDefault();
+
+    /* [DONE] make new constant named "clickedElement" and give it the value of "this" */
+    //look al line 6
+
+    /* [IN PROGRESS] make a new constant "href" and read the attribute "href" of the clicked element */
+    const href = generateTags.getAttribute(href); //or const href = clickedElement.getAtribute(href) -- make a "href" constant and download the atribute from clicked element
+    console.log(clickedElement.getAttribute(href));
+
+    /* [To REVIEW] make a new constant "tag" and extract tag from the "href" constant */
+    const tag = href(tag);
+    console.log(href(tag));
+
+    //[SHOULD BE FINE] Kodilla says otherwise:
+    //const tag = href.replace('#tag-', '');
+
+
+    /* [TO REVIEW] find all tag links with class active */
+    post.querySelectorAll('a.active[href^="#tag-"]'); //select link active class
+
+    /* [To REVIEW] START LOOP: for each active tag link */
+    for(post of querySelectorAll('a[href="' + href + '"]')){
+
+      /* remove class active */
+      post.classList.remove('active'); // remove class active from link
+
+    /* END LOOP: for each active tag link */
+    }
+
+    /* find all tag links with "href" attribute equal to the "href" constant */
+
+    /* START LOOP: for each found tag link */
+
+      /* add class active */
+
+    /* END LOOP: for each found tag link */
+
+    /* execute function "generateTitleLinks" with article selector as argument */
+  }
+
+  function addClickListenersToTags(){
+    /* find all links to tags */
+
+    /* START LOOP: for each link */
+
+      /* add tagClickHandler as event listener for that link */
+
+    /* END LOOP: for each link */
+  }
+
+  addClickListenersToTags();
+
+
 }

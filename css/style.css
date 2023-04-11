@@ -76,6 +76,7 @@ body {
   li {
     display: inline-block;
     margin-right: 15 px;
+    word-spacing: 10px;
   }
 }
 
