@@ -102,6 +102,7 @@
 
       /* [CHECK-IT] START LOOP: for each tag */
       for(let tag of articleTagsArray){
+        console.log(articleTagsArray);
 
         /* generate HTML of the link */
         const linkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
@@ -114,7 +115,7 @@
 
         /* insert HTML of all the links into the tags wrapper */
 
-        tagsWrapper.innerHTML = html;
+        tagWrapper.innerHTML = html;
 
     /* END LOOP: for every article: */
     }
