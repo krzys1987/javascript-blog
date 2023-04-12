@@ -129,10 +129,10 @@
     event.preventDefault();
 
     /* [DONE] make new constant named "clickedElement" and give it the value of "this" */
-    //look al line 6
+    const clickedElement = this;
 
-    /* [IN PROGRESS] make a new constant "href" and read the attribute "href" of the clicked element */
-    const href = generateTags.getAttribute(href); //or const href = clickedElement.getAtribute(href) -- make a "href" constant and download the atribute from clicked element
+    /* [DONE] make a new constant "href" and read the attribute "href" of the clicked element */
+    const href = clickedElement.getAtribute(href);
     console.log(clickedElement.getAttribute(href));
 
     /* [To REVIEW] make a new constant "tag" and extract tag from the "href" constant */
