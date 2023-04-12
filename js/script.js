@@ -125,7 +125,8 @@
 
   function tagClickHandler(event){
     /* [DONE] prevent default action for this event */
-    tagClickHandler(event).preventDefault();
+    //fixed tagClickHandler(event).preventDefault() --> event.preventDefault();
+    event.preventDefault();
 
     /* [DONE] make new constant named "clickedElement" and give it the value of "this" */
     //look al line 6
