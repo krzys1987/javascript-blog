@@ -124,7 +124,7 @@
   generateTags();
 
   function tagClickHandler(event){
-    /* [DONE] prevent default action for this event */
+    /* [To REVIEW] prevent default action for this event */
     //fixed tagClickHandler(event).preventDefault() --> event.preventDefault();
     event.preventDefault();
 
