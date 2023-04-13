@@ -51,6 +51,7 @@
 
     /* [DONE] for each article */
     const articles = document.querySelectorAll(optArticleSelector);
+    //const articles = artice.querySelectorAll(optArticleSelector);
 
     for (let article of articles) {
       /* [DONE] get the article id */
@@ -136,7 +137,7 @@
     console.log(href);
 
     /* [DONE] make a new constant "tag" and extract tag from the "href" constant */
-    const tag = href.replace('#tag-', '');
+    const tag = href.replace('#tag-', ''); //tag remove
     console.log(tag);
 
     /* [DONE] find all tag links with class active */
@@ -155,9 +156,6 @@
     /* [DONE] find all tag links with "href" attribute equal to the "href" constant */
     const links = document.querySelectorAll('a[href="' + href + '"]');
 
-
-
-
     /* START LOOP: for each found tag link */
     for(let link of links){
 
@@ -171,12 +169,17 @@
 
   tagClickHandler(event);
 
-  function addClickListenersToTags(){
+  [IN PROGRESS] function addClickListenersToTags(){
     /* find all links to tags */
+    const tagLinks = document.querySelectorAll('a(href^="#tag -")');
+
 
     /* START LOOP: for each link */
+    for(const tagLink of tagLinks);
+
 
     /* add tagClickHandler as event listener for that link */
+      const tagLink(tagClickHandler);
 
     /* END LOOP: for each link */
   }
