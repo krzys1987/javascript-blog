@@ -43,7 +43,8 @@
     optTitleListSelector = '.titles',
     optArticleTagsSelector = '.post-tags .list';
 
-  const generateTitleLinks = function() {
+    //[IN PROGRESS] custom selector
+  const generateTitleLinks = function(customSelector = 'document.querySelectorAll(optArticleSelector + customSelector)') {
 
     /* [DONE] remove contents of titleList */
     const titleList = document.querySelector(optTitleListSelector);
@@ -79,7 +80,7 @@
     }
   };
 
-  generateTitleLinks();
+  generateTitleLinks('[data-tags~="' + tag + '"');
 
   const generateTags = function() {
     /* [DONE] find all articles */
@@ -164,7 +165,7 @@
     /* END LOOP: for each found tag link */
     }
     /* execute function "generateTitleLinks" with article selector as argument */
-    generateTitleLinks('[data-tags~="' + tag + '"]'); //function+atributte 
+    generateTitleLinks('[data-tags~="' + tag + '"]'); //function+atributte
   }
 
   tagClickHandler(event);
