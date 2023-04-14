@@ -43,7 +43,7 @@
     optTitleListSelector = '.titles',
     optArticleTagsSelector = '.post-tags .list';
 
-    //[IN PROGRESS] custom selector
+  //[IN PROGRESS] custom selector
   const generateTitleLinks = function(customSelector = 'document.querySelectorAll(optArticleSelector + customSelector)') {
 
     /* [DONE] remove contents of titleList */
@@ -186,7 +186,17 @@
     /* END LOOP: for each link */
   }
 
-  addClickListenersToTags();
+ /* add author to article */
+/*
+ function generateAuthors (){
+  console.log();
+  function addClickListenersToAuthors(){
 
+  }
+
+
+}
+  addClickListenersToTags();
+*/
 
 }
