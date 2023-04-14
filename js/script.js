@@ -43,15 +43,16 @@
     optTitleListSelector = '.titles',
     optArticleTagsSelector = '.post-tags .list';
 
-  //[IN PROGRESS] custom selector
-  const generateTitleLinks = function(customSelector = 'document.querySelectorAll(optArticleSelector + customSelector)') {
+  // [DONE] custom selector
+  const generateTitleLinks = function(customSelector = '') {
+    console.log(customSelector);
 
     /* [DONE] remove contents of titleList */
     const titleList = document.querySelector(optTitleListSelector);
     titleList.innerHTML = '';
 
     /* [DONE] for each article */
-    const articles = document.querySelectorAll(optArticleSelector);
+    const articles = document.querySelectorAll(optArticleSelector + customSelector);
     //const articles = artice.querySelectorAll(optArticleSelector);
 
     for (let article of articles) {
@@ -81,7 +82,6 @@
   };
 
   generateTitleLinks('[data-tags~="' + tag + '"');
-
   const generateTags = function() {
     /* [DONE] find all articles */
     const articles = document.querySelectorAll('article');
@@ -125,7 +125,7 @@
 
   generateTags();
 
-  function tagClickHandler(event){
+  const tagClickHandler = function(event){
     /* [To REVIEW] prevent default action for this event */
     //fixed tagClickHandler(event).preventDefault() --> event.preventDefault();
     event.preventDefault();
@@ -168,23 +168,22 @@
     generateTitleLinks('[data-tags~="' + tag + '"]'); //function+atributte
   }
 
-  tagClickHandler(event);
-
-  /* IN PROGRESS */ function addClickListenersToTags(){
+  /* DONE */ function addClickListenersToTags(){
     /* find all links to tags */
     const tagLinks = document.querySelectorAll('a[href^="#tag -"]');
 
-
     /* START LOOP: for each link */
-    for(const tagLink of tagLinks);
-
-
-
-    /* add tagClickHandler as event listener for that link */
-      const tagLinkListener = tagLink(tagClickHandler);
+    for(const tagLink of tagLinks){
+      /* add tagClickHandler as event listener for that link */
+      add.addEventListener('click', tagClickHandler);
 
     /* END LOOP: for each link */
-  }
+    }
+  };
+
+  addClickListenersToTags;
+
+}
 
  /* add author to article */
 /*
@@ -196,7 +195,6 @@
 
 
 }
-  addClickListenersToTags();
-*/
+
 
 }
