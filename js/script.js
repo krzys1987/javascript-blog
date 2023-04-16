@@ -181,6 +181,23 @@
     }
   };
 
+  const generateAuthors = function (){
+    console.log(generateAuthors);
+    const addClickListenersToAuthors = function(){
+      /* find all links to authors */
+      const authorsList = document.querySelectorAll('a(href^="[#author "]');
+      const addClickListenersToTags = function(){
+        /* find all links to tags */
+        const tagLinks = document.querySelectorAll('a[href^="#tag -"]');
+        preventDefault
+
+    }
+    const authorClickHandler = function(){
+
+
+    }
+  }
+
   addClickListenersToTags;
 
   /* add author to article */
@@ -188,6 +205,13 @@
  function generateAuthors (){
   console.log();
   function addClickListenersToAuthors(){
+    const articleAuthor = article.querySelectorAll('data-author').
+
+  const authorClickHandler = function(){
+    //prevent default actions
+    data-author.preventDefault();
+
+  }
 
   } */
 
