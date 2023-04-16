@@ -44,7 +44,7 @@
     optArticleTagsSelector = '.post-tags .list';
 
   // [DONE] custom selector
-  const generateTitleLinks = function(customSelector = '') {
+  const generateTitleLinks = function(customSelector = ''){
     console.log(customSelector);
 
     /* [DONE] remove contents of titleList */
@@ -138,14 +138,15 @@
     console.log(href);
 
     /* [DONE] make a new constant "tag" and extract tag from the "href" constant */
-    const tag = href.replace('#tag-', ''); //tag remove
+    const tag = href.replace('#tag-', ''); //tag remove to get word (#tag-cat- > remove #tag- > cat )
     console.log(tag);
 
     /* [DONE] find all tag links with class active */
+    document.querySelectorAll('a.active[href^="#tag-"]'); //what is it for? Unessesary I thing, dont have before
     const activeLinks = document.querySelectorAll('a.active[href^="#tag-"]');
 
     /* [DONE] START LOOP: for each active tag link */
-    for(let link of activeLinks){
+    for(const link of activeLinks){
       /* remove class active */
       link.classList.remove('active'); // remove class active from link
 
