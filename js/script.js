@@ -195,16 +195,6 @@
       const authorsList = document.querySelectorAll('a(href^="[#author "]');
     }
 
-    /* find all authors */
-    const addClickListenersToAuthors = function (){
-      const articleAuthor = article.querySelectorAll('data-author');
-    }
-
-    /* author clickHandler */
-    const authorClickHandler = function(){
-
-    }
-
     const authorClickHandler = function(){
       generateTitleLinks(authors[=getElemntById])
       //prevent default actions
