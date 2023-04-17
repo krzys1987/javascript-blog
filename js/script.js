@@ -82,7 +82,7 @@
     }
   };
 
-  generateTitleLinks('[data-tags~="' + 'tag' + '"');
+  generateTitleLinks();
   const generateTags = function() {
     /* [DONE] find all articles */
     const articles = document.querySelectorAll('article');
