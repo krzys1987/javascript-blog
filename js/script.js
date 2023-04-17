@@ -42,7 +42,7 @@
     optTitleSelector = '.post-title',
     optTitleListSelector = '.titles',
     optArticleTagsSelector = '.post-tags .list',
-    optArticleAuthorSelector = '.post';
+    optArticleAuthorSelector = '.post data-author';
 
   // [DONE] custom selector
   const generateTitleLinks = function(customSelector = ''){
@@ -192,11 +192,14 @@
     const addClickListenersToAuthors = function(){
       //const authorsList = article.getAttribute('data-author');
       //const articleAuthors = getElementById('data-author');
-      const authorsList = document.querySelectorAll('a(href^="[#author "]');
+      //const authorsList = document.querySelectorAll('a(href^="[#author "]');
+      const authorList = document.querySelectorAll(optArticleAuthorSelector);
     }
 
+    const generateAuthorsLinks = (a[href=getElemntById('data-author')]);
+
     const authorClickHandler = function(){
-      generateTitleLinks(authors[=getElemntById])
+      generateAuthorsLinks;
       //prevent default actions
       data-author.preventDefault();
 
@@ -204,5 +207,6 @@
 
   }
 
+  generateAuthors();
 }
 
