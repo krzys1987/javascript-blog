@@ -41,7 +41,8 @@
   const optArticleSelector = '.post',
     optTitleSelector = '.post-title',
     optTitleListSelector = '.titles',
-    optArticleTagsSelector = '.post-tags .list';
+    optArticleTagsSelector = '.post-tags .list',
+    optArticleAuthorSelector = '.post';
 
   // [DONE] custom selector
   const generateTitleLinks = function(customSelector = ''){
@@ -181,39 +182,37 @@
     }
   };
 
-  const generateAuthors = function (){
-    console.log(generateAuthors);
-    const addClickListenersToAuthors = function(){
-      /* find all links to authors */
-      const authorsList = document.querySelectorAll('a(href^="[#author "]');
-      const addClickListenersToTags = function(){
-        /* find all links to tags */
-        const tagLinks = document.querySelectorAll('a[href^="#tag -"]');
-        preventDefault
-
-    }
-    const authorClickHandler = function(){
-
-
-    }
-  }
-
   addClickListenersToTags;
 
-  /* add author to article */
-  /*
- function generateAuthors (){
-  console.log();
-  function addClickListenersToAuthors(){
-    const articleAuthor = article.querySelectorAll('data-author').
+  /* add authors to .post */
+  const generateAuthors = function (){
+    console.log(generateAuthors);
 
-  const authorClickHandler = function(){
-    //prevent default actions
-    data-author.preventDefault();
+    /* find all links to authors */
+    const addClickListenersToAuthors = function(){
+      //const authorsList = article.getAttribute('data-author');
+      //const articleAuthors = getElementById('data-author');
+      const authorsList = document.querySelectorAll('a(href^="[#author "]');
+    }
+
+    /* find all authors */
+    const addClickListenersToAuthors = function (){
+      const articleAuthor = article.querySelectorAll('data-author');
+    }
+
+    /* author clickHandler */
+    const authorClickHandler = function(){
+
+    }
+
+    const authorClickHandler = function(){
+      generateTitleLinks(authors[=getElemntById])
+      //prevent default actions
+      data-author.preventDefault();
+
+    }
 
   }
-
-  } */
 
 }
 
