@@ -194,19 +194,23 @@
       //const articleAuthors = getElementById('data-author');
       //const authorsList = document.querySelectorAll('a(href^="[#author "]');
       const authorList = document.querySelectorAll(optArticleAuthorSelector);
-    }
+    };
 
-    const generateAuthorsLinks = (a[href=getElemntById('data-author')]);
+    const generateAuthorsLinks = (getElementById('data-author'));
 
     const authorClickHandler = function(){
       generateAuthorsLinks;
       //prevent default actions
-      data-author.preventDefault();
+      // sth is wrong data-author.preventDefault();
 
-    }
+    };
 
-  }
+  };
+
+  addClickListenersToAuthors;
+
 
   generateAuthors();
+  authorList();
 }
 
