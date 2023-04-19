@@ -168,7 +168,7 @@
     generateTitleLinks('[data-tags~="' + tag + '"]'); //function+atributte
   };
 
-  /* [DONE] Find lins with tags */
+  /* [DONE] Find links with tags */
   const addClickListenersToTags = function(){
     /* find all links to tags */
     const tagLinks = document.querySelectorAll('a[href^="#tag -"]');
@@ -184,33 +184,45 @@
 
   addClickListenersToTags;
 
-  /* add authors to .post */
-  const generateAuthors = function (){
-    console.log(generateAuthors);
+  const generateAuthors = function() {
+    /* [DONE] find all articles */
+    const articles = document.querySelectorAll('article');
 
-    /* find all links to authors */
+    /* [DONE] START LOOP: for every article: */
+    for(let article of articles){
+
+      /* [DONE] find tags wrapper */
+      const authorWrapper = article.querySelector(optArticleAuthorSelector);
+
+      /* [DONE] get tags from data-tags attribute */
+      const articleAuthor = article.getAttribute('data-author');
+
+     /* generate HTML of the link */
+      const linkHTML = '<li><a href="#author-' + articleAuthor + '"><span>' + articleAuthor + '</span></a></li>';
+
+      /* insert HTML of all the links into the tags wrapper */
+      authorWrapper.innerHTML = html;
+
+    /* END LOOP: for every article: */
+    }
+
     const addClickListenersToAuthors = function(){
-      //const authorsList = article.getAttribute('data-author');
-      //const articleAuthors = getElementById('data-author');
-      //const authorsList = document.querySelectorAll('a(href^="[#author "]');
-      const authorList = document.querySelectorAll(optArticleAuthorSelector);
-    };
+      //fin all articles
+      /* [DONE] Find links with author */
+      //const authorLinks = document.querySelectorAll('a[href^="#author -"]');
 
-    const generateAuthorsLinks = (getElementById('data-author'));
+      /* START LOOP: for each link */
+      for(const authorLink of authorLinks){
 
-    const authorClickHandler = function(){
-      generateAuthorsLinks;
-      //prevent default actions
-      // sth is wrong data-author.preventDefault();
+      /* add tagClickHandler as event listener for that link */
+      authorLinks.add.addEventListener('click', tagClickHandler);
 
-    };
+      /* END LOOP: for each link */
+      }
 
+    }
   };
 
-  addClickListenersToAuthors;
-
-
-  generateAuthors();
-  authorList();
+  generateTags();
 }
 
