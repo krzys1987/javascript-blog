@@ -182,7 +182,7 @@
     }
   };
 
-  addClickListenersToTags;
+  generateTags();
 
   const generateAuthors = function() {
     /* [DONE] find all articles */
@@ -197,16 +197,58 @@
       /* [DONE] get tags from data-tags attribute */
       const articleAuthor = article.getAttribute('data-author');
 
-     /* generate HTML of the link */
+      /* generate HTML of the link */
       const linkHTML = '<li><a href="#author-' + articleAuthor + '"><span>' + articleAuthor + '</span></a></li>';
+      /* add const instead of just ' author', #author- or should be #-author? There's a data-author tag at html */
 
       /* insert HTML of all the links into the tags wrapper */
-      authorWrapper.innerHTML = html;
 
-    /* END LOOP: for every article: */
+      linkHTML.innerHTML = article + articleAuthor;
+
+    }
+  };
+
+  generateAuthors();
+
+  /* Authors clickListener */
+  const addClickListenersToAuthors = function(){
+    /* [DONE] Find links with tags */
+    const authorList = document.querySelectorAll('a[href^="#author -"]');
+
+    /* START LOOP: for each link */
+    for(const author of authorList){
+      /* add tagClickHandler as event listener for that link */
+      authorList.add.addEventListener('click', tagClickHandler);
+
+    /* END LOOP: for each link */
+    }
+  };
+
+  addClickListenersToAuthors();
+
+  /* authorClickHandlder */
+
+  const authorClickHandler = function(event){
+    /* [DONE] prevent default action for this event */
+    event.preventDefault();
+
+    /* [DONE] make a new constant "tag" and extract tag from the "href" constant */
+    const authorTag = href.replace('#data-author-', ''); //tag remove to get word (#tag-cat- > remove #tag- > cat )
+    console.log(authorTag);
+
+    /* [IN PROGRESS] display author at article */
+    authorTag.innerHTML.article;
+    generateAuthors.authorClickHandler(authorTag);
+
+
+    /* [DONE] START LOOP: for each active tag link */
+    for(const author of authorList){
+      /* remove class active */
+      link.classList.remove('active'); // remove class active from link
+
+    /* [DONE] END LOOP: for each active tag link */
     }
 
-    const addClickListenersToAuthors = function(){
       //fin all articles
       /* [DONE] Find links with author */
       //const authorLinks = document.querySelectorAll('a[href^="#author -"]');
@@ -221,8 +263,4 @@
       }
 
     }
-  };
-
-  generateTags();
-}
-
+  }
