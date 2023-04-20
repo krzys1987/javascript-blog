@@ -233,14 +233,23 @@
     /* [DONE] prevent default action for this event */
     event.preventDefault();
 
+     /* [DONE] make new constant named "clickedElement" and give it the value of "this" */
+     const clickedElement = this;
+
+     /* [DONE] make a new constant "href" and read the attribute "href" of the clicked element */
+    // const href = clickedElement.getAttribute('href');
+    // console.log(href);
+
+    /* [DONE] make new constant named "href" */
+    const href = this.getAttribute('href');
+
     /* [DONE] make a new constant "tag" and extract tag from the "href" constant */
-    const authorTag = href.replace('#data-author-', ''); //tag remove to get word (#tag-cat- > remove #tag- > cat )
+    const authorTag = href.replace('#author-', ''); //tag remove to get word (#tag-cat- > remove #tag- > cat )
     console.log(authorTag);
 
-    /* [IN PROGRESS] display author at article */
-    authorTag.innerHTML.article;
-    generateAuthors.authorClickHandler(authorTag);
-
+    /* [DONE] find all tag links with class author */
+    document.querySelectorAll('author[href^="#tag-"]');
+    const activeLinks = document.querySelectorAll('author[href^="#tag-"]');
 
     /* [DONE] START LOOP: for each active tag link */
     for(const author of authorList){
