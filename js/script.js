@@ -232,24 +232,28 @@
   const authorClickHandler = function(event){
     /* [DONE] prevent default action for this event */
     event.preventDefault();
+    /* [DONE] find all articles */
+    const articles = document.querySelectorAll('article');
 
-     /* [DONE] make new constant named "clickedElement" and give it the value of "this" */
-     const clickedElement = this;
+    /* [DONE] make new constant named "clickedElement" and give it the value of "this" */
+    const clickedElement = this;
 
-     /* [DONE] make a new constant "href" and read the attribute "href" of the clicked element */
-    // const href = clickedElement.getAttribute('href');
+    /* [DONE] make a new constant "href" and read the attribute "href" of the clicked element */
+    const href = clickedElement.getAttribute('href');
     // console.log(href);
 
-    /* [DONE] make new constant named "href" */
-    const href = this.getAttribute('href');
+    /* [DONE] make a new constant "author" */
+    const author = this.getAttribute(data-author);
+    /* not sure searcing tag name, at html is data-author */
+    console.log(author);
 
     /* [DONE] make a new constant "tag" and extract tag from the "href" constant */
     const authorTag = href.replace('#author-', ''); //tag remove to get word (#tag-cat- > remove #tag- > cat )
     console.log(authorTag);
 
     /* [DONE] find all tag links with class author */
-    document.querySelectorAll('author[href^="#tag-"]');
-    const activeLinks = document.querySelectorAll('author[href^="#tag-"]');
+    document.querySelectorAll('a.active[href^="#tag-"]');
+    const activeLinks = document.querySelectorAll('a.active[href^="#tag-"]');
 
     /* [DONE] START LOOP: for each active tag link */
     for(const author of authorList){
@@ -259,7 +263,6 @@
     /* [DONE] END LOOP: for each active tag link */
     }
 
-      //fin all articles
       /* [DONE] Find links with author */
       //const authorLinks = document.querySelectorAll('a[href^="#author -"]');
 
