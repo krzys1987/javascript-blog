@@ -214,12 +214,12 @@
   /* Authors clickListener */
   const addClickListenersToAuthors = function(){
     /* [DONE] Find links with tags */
-    const authorList = document.querySelectorAll('a[href^="#author -"]');
+    const authorList = document.querySelectorAll('a[href^="#author-"]');
 
     /* START LOOP: for each link */
     for(const author of authorList){
       /* add tagClickHandler as event listener for that link */
-      authorList.add.addEventListener('click', tagClickHandler);
+      author.addEventListener('click', authorClickHandler);
 
     /* END LOOP: for each link */
     }
@@ -258,7 +258,7 @@
       for(const authorLink of authorLinks){
 
       /* add tagClickHandler as event listener for that link */
-      authorLinks.add.addEventListener('click', tagClickHandler);
+      author.addEventListener('click', tagClickHandler);
 
       /* END LOOP: for each link */
       }
