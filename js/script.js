@@ -171,7 +171,7 @@
   /* [DONE] Find links with tags */
   const addClickListenersToTags = function(){
     /* find all links to tags */
-    const tagLinks = document.querySelectorAll('a[href^="#tag -"]');
+    const tagLinks = document.querySelectorAll('a[href^="#tag-"]');
 
     /* START LOOP: for each link */
     for(const tagLink of tagLinks){
