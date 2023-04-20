@@ -176,7 +176,7 @@
     /* START LOOP: for each link */
     for(const tagLink of tagLinks){
       /* add tagClickHandler as event listener for that link */
-      tagLink.add.addEventListener('click', tagClickHandler);
+      tagLink.addEventListener('click', tagClickHandler);
 
     /* END LOOP: for each link */
     }
