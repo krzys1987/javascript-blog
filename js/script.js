@@ -183,6 +183,7 @@
   };
 
   generateTags();
+  addClickListenersToTags();
 
   const generateAuthors = function() {
     /* [DONE] find all articles */
@@ -262,5 +263,5 @@
       /* END LOOP: for each link */
       }
 
-    }
+    };
   }
