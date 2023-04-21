@@ -84,6 +84,18 @@
 
   generateTitleLinks();
   const generateTags = function() {
+    /* [NEW] create a new variable allTags with an empty object */
+    let allTags = {
+      /* check if this link is NOT already in allTags */
+      if(!allTags[tag]){
+        /* [NEW] add tag to allTags object */
+        allTags[tag] = 1;
+      } else {
+        allTags[tag] ++;
+      }
+    }
+    };
+    console.log('created a new variable allTag with an empty array');
     /* [DONE] find all articles */
     const articles = document.querySelectorAll('article');
 
@@ -103,14 +115,14 @@
       console.log(articleTags.split(' '));
       const articleTagsArray = articleTags.split(' '); //tags are: 'news reviews design' changed 'news' 'reviews' 'design'
 
-      /* [CHECK-IT] START LOOP: for each tag */
+      /* [DONE] START LOOP: for each tag */
       for(let tag of articleTagsArray){
         console.log(articleTagsArray);
 
-        /* generate HTML of the link */
+        /* [DONE] generate HTML of the link */
         const linkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
 
-        /* add generated code to html variable */
+        /* [DONE] add generated code to html variable */
         html = html + linkHTML;
 
         /* [NEW] check if this link is NOT already in allTags */
@@ -130,8 +142,19 @@
       /* [NEW] find list of tags in right column */
       const tagList = document.querySelector(optTagsListSelector);
 
-      /* [NEW] add html from allTags to tagList */
-      tagList.innerHTML = allTags.join(' ');
+      /* [NEW] create variable for all links HTML code */
+      let allTagsHTML = '';
+
+      /* [NEW] START LOOP: for each tag in allTags: */
+      for(let tag in allTags){
+      /* [NEW] generate code of a link and add it to allTagsHTML */
+      allTagsHTML += tag + ' (' + allTags[tag] + ') ';
+      }
+
+      /* [NEW] END LOOP: for each tag in allTags: */
+
+      /*[NEW] add HTML from allTagsHTML to tagList */
+      tagList.innerHTML = allTagsHTML;
     }
 
   };
