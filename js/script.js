@@ -113,6 +113,12 @@
         /* add generated code to html variable */
         html = html + linkHTML;
 
+        /* [NEW] check if this link is NOT already in allTags */
+        if(allTags.indexOf(linkHTML) == -1){
+        /* [NEW] add generated code to allTags array */
+          allTags.push(linkHTML);
+        }
+
         /* END LOOP: for each tag */
       }
 
@@ -120,8 +126,14 @@
 
       tagWrapper.innerHTML = html;
 
-    /* END LOOP: for every article: */
+      /* END LOOP: for every article: */
+      /* [NEW] find list of tags in right column */
+      const tagList = document.querySelector(optTagsListSelector);
+
+      /* [NEW] add html from allTags to tagList */
+      tagList.innerHTML = allTags.join(' ');
     }
+
   };
 
   generateTags();
@@ -263,17 +275,17 @@
     /* [DONE] END LOOP: for each active tag link */
     }
 
-      /* [DONE] Find links with author */
-      //const authorLinks = document.querySelectorAll('a[href^="#author -"]');
+    /* [DONE] Find links with author */
+    //const authorLinks = document.querySelectorAll('a[href^="#author -"]');
 
-      /* START LOOP: for each link */
-      for(const authorLink of authorLinks){
+    /* START LOOP: for each link */
+    for(const authorLink of authorLinks){
 
       /* add tagClickHandler as event listener for that link */
       author.addEventListener('click', tagClickHandler);
 
       /* END LOOP: for each link */
-      }
+    }
 
-    };
-  }
+  };
+}
