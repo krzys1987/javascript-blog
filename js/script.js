@@ -42,7 +42,8 @@
     optTitleSelector = '.post-title',
     optTitleListSelector = '.titles',
     optArticleTagsSelector = '.post-tags .list',
-    optArticleAuthorSelector = '.post data-author';
+    optArticleAuthorSelector = '.post-author',
+    optTagsListSelector = '.sidebar .list.tags';
 
   // [DONE] custom selector
   const generateTitleLinks = function(customSelector = ''){
@@ -83,18 +84,11 @@
   };
 
   generateTitleLinks();
+  /* add tags to articles */
   const generateTags = function() {
     /* [NEW] create a new variable allTags with an empty object */
-    let allTags = {
-      /* check if this link is NOT already in allTags */
-      if(!allTags[tag]){
-        /* [NEW] add tag to allTags object */
-        allTags[tag] = 1;
-      } else {
-        allTags[tag] ++;
-      }
-    }
-    };
+    let allTags = { };
+
     console.log('created a new variable allTag with an empty array');
     /* [DONE] find all articles */
     const articles = document.querySelectorAll('article');
@@ -112,7 +106,6 @@
       const articleTags = article.getAttribute('data-tags');
 
       /* [DONE] split tags into array */
-      console.log(articleTags.split(' '));
       const articleTagsArray = articleTags.split(' '); //tags are: 'news reviews design' changed 'news' 'reviews' 'design'
 
       /* [DONE] START LOOP: for each tag */
@@ -124,6 +117,15 @@
 
         /* [DONE] add generated code to html variable */
         html = html + linkHTML;
+
+        /* check if this link is NOT already in allTags */
+        if(!allTags[tag]){
+        /* [NEW] add tag to allTags object */
+        allTags[tag] = 1;
+        } else {
+        allTags[tag] ++;
+        }
+      }
 
         /* [NEW] check if this link is NOT already in allTags */
         if(allTags.indexOf(linkHTML) == -1){
@@ -143,7 +145,7 @@
       const tagList = document.querySelector(optTagsListSelector);
 
       /* [NEW] create variable for all links HTML code */
-      let allTagsHTML = '';
+      let allTagsHTML = ''; //[QUESTION] why an empty string?
 
       /* [NEW] START LOOP: for each tag in allTags: */
       for(let tag in allTags){
@@ -311,4 +313,3 @@
     }
 
   };
-}
