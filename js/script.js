@@ -214,7 +214,7 @@
     /* END LOOP: for each link */
     }
 
-    generateTitleLinks('[data-tags~="' + tag + '"]'); //function+atributte
+    generateTitleLinks('[data-tags~="' + tag + '"]'); //function+atributte, tag is error? I tried 'tag' but script doesn't work
 
   };
 
@@ -307,9 +307,10 @@
 
         /* END LOOP: for each link */
       }
-    }
+    };
+    addClickListenersToAuthors('[data-author="' + authorTag + '"]');
+
   };
 
-  addClickListenersToAuthors('[data-author="' + authorTag + '"]');
 
 }
