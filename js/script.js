@@ -1,6 +1,15 @@
 {
   //Strict Mode
   'use strict';
+  /*
+  const opts = {
+    articleSelector = '.post',
+    titleSelector = '.post-title',
+    titleListSelector = '.titles',
+    articleTagsSelector = '.post-tags .list',
+    tagsListSelector = '.sidebar .list.tags';
+    //authorsListSelector = ;
+    */
 
   const titleClickHandler = function() {
     const clickedElement = this;
@@ -308,7 +317,7 @@
         /* END LOOP: for each link */
       }
     };
-    addClickListenersToAuthors('[data-author="' + authorTag + '"]');
+      addClickListenersToAuthors('[data-author="' + authorTag + '"]');
 
   };
 
