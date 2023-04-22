@@ -44,6 +44,7 @@
     optArticleTagsSelector = '.post-tags .list',
     optArticleAuthorSelector = '.post-author',
     optTagsListSelector = '.sidebar .list.tags';
+    //what inside? optAuthorsListSelector = ;
 
   // [DONE] custom selector
   const generateTitleLinks = function(customSelector = ''){
@@ -67,12 +68,12 @@
       const articleTitle = article.querySelector(optTitleSelector).innerHTML;
       //What it does? Create a constant value which look for - article - class .post-title. Search target: html
 
-      /* [CHECKT-IT] get the title from the title element */
+      /* [DONE] get the title from the title element */
 
       const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
       console.log('linkHTML');
 
-      /* create HTML of the link */
+      /* [DONE] create HTML of the link */
       titleList.innerHTML = titleList.innerHTML + linkHTML;
 
       const links = document.querySelectorAll('.titles a');
@@ -84,7 +85,9 @@
   };
 
   generateTitleLinks();
+
   /* add tags to articles */
+
   const generateTags = function() {
     /* [NEW] create a new variable allTags with an empty object */
     let allTags = { };
@@ -118,46 +121,40 @@
         /* [DONE] add generated code to html variable */
         html = html + linkHTML;
 
-        /* check if this link is NOT already in allTags */
-        if(!allTags[tag]){
-        /* [NEW] add tag to allTags object */
-        allTags[tag] = 1;
-        } else {
-        allTags[tag] ++;
-        }
-      }
-
         /* [NEW] check if this link is NOT already in allTags */
-        if(allTags.indexOf(linkHTML) == -1){
-        /* [NEW] add generated code to allTags array */
-          allTags.push(linkHTML);
+        if(!allTags[tag]){
+          /* [NEW] add tag to allTags object */
+          allTags[tag] = 1;
+        } else {
+          allTags[tag] ++;
         }
 
-        /* END LOOP: for each tag */
+        /* [DONE] END LOOP: for each tag */
       }
 
-      /* insert HTML of all the links into the tags wrapper */
+      /* [DONE] insert HTML of all the links into the tags wrapper */
 
       tagWrapper.innerHTML = html;
 
-      /* END LOOP: for every article: */
-      /* [NEW] find list of tags in right column */
-      const tagList = document.querySelector(optTagsListSelector);
-
-      /* [NEW] create variable for all links HTML code */
-      let allTagsHTML = ''; //[QUESTION] why an empty string?
-
-      /* [NEW] START LOOP: for each tag in allTags: */
-      for(let tag in allTags){
-      /* [NEW] generate code of a link and add it to allTagsHTML */
-      allTagsHTML += tag + ' (' + allTags[tag] + ') ';
-      }
-
-      /* [NEW] END LOOP: for each tag in allTags: */
-
-      /*[NEW] add HTML from allTagsHTML to tagList */
-      tagList.innerHTML = allTagsHTML;
+      /* [DONE] END LOOP: for every article: */
     }
+
+    /* [NEW] find list of tags in right column */
+    const tagList = document.querySelector(optTagsListSelector);
+
+    /* [NEW] create variable for all links HTML code */
+    let allTagsHTML = '';
+
+    /* [NEW] START LOOP: for each tag in allTags: */
+    for(let tag in allTags){
+      /* [NEW] generate code of a link and add it to allTagsHTML */
+      allTagsHTML += '<li><a href="#tag-' + tag + '"><span>' + tag + ' (' + allTags[tag] + ')</span></a></li>';
+    }
+
+    /* [NEW] END LOOP: for each tag in allTags: */
+
+    /*[NEW] add HTML from allTagsHTML to tagList */
+    tagList.innerHTML = allTagsHTML;
 
   };
 
@@ -226,6 +223,21 @@
     /* [DONE] find all articles */
     const articles = document.querySelectorAll('article');
 
+    /* [DONE] create a constant 'clickedElement' which equals to 'this */
+    const clickedElement = this;
+
+    /* [DONE][QUESTION - WHAT FOR] create a constant 'href' and get value from clickedElement */
+    const href = clickedElement.getAttribute('href');
+    console.log(href);
+
+    /* [IN PROGRESS] create a constant 'authorTag'. Cleeaner look: change data-author to author */
+    const authorTag = href.replace('#author-', '' );
+
+    /* [IN PROGRESS] fin all posts contains 'author' */
+
+
+
+
     /* [DONE] START LOOP: for every article: */
     for(let article of articles){
 
@@ -262,7 +274,7 @@
     }
   };
 
-  addClickListenersToAuthors();
+  addClickListenersToAuthors('[data-author="' + authorTag + '"]');
 
   /* authorClickHandlder */
 
@@ -311,5 +323,6 @@
 
       /* END LOOP: for each link */
     }
-
-  };
+  }
+  addClickListenersToAuthors
+}
