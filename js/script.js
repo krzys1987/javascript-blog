@@ -170,8 +170,6 @@
   generateTags();
 
   const tagClickHandler = function(event){
-    /* [To REVIEW] prevent default action for this event */
-    //fixed tagClickHandler(event).preventDefault() --> event.preventDefault();
     event.preventDefault();
 
     /* [DONE] make new constant named "clickedElement" and give it the value of "this" */
@@ -207,6 +205,8 @@
     /* END LOOP: for each found tag link */
     }
     /* execute function "generateTitleLinks" with article selector as argument */
+
+    generateTitleLinks('[data-tags~="' + tag + '"]');
 
   };
 
@@ -317,7 +317,8 @@
         /* END LOOP: for each link */
       }
     };
-      addClickListenersToAuthors('[data-author="' + authorTag + '"]');
+    addClickListenersToAuthors('[data-author="' + authorTag + '"]');
+    authorClickHandler;
 
   };
 
