@@ -53,7 +53,6 @@
     optArticleTagsSelector = '.post-tags .list',
     optArticleAuthorSelector = '.post-author',
     optTagsListSelector = '.sidebar .list.tags';
-    //what inside? optAuthorsListSelector = ;
 
   // [DONE] custom selector
   const generateTitleLinks = function(customSelector = ''){
@@ -230,14 +229,15 @@
   generateTags();
   addClickListenersToTags();
 
-  const generateAuthors = function() {
+  const generateAuthors = function(event) {
+    event.preventDefault();
     /* [DONE] find all articles */
     const articles = document.querySelectorAll('article');
 
     /* [DONE] START LOOP: for every article: */
     for(let article of articles){
 
-      /* [DONE] find tags wrapper */
+      /* [DONE] find author wrapper */
       const authorWrapper = article.querySelector(optArticleAuthorSelector);
 
       /* [DONE] get tags from data-tags attribute */
@@ -251,6 +251,20 @@
 
       authorWrapper.innerHTML = article + articleAuthor;
 
+    }
+  };
+
+  /* [DONE]] find posts with authors */
+  const addClickListenersToAuthors = function(){
+    /* [DONE] Find links with tags */
+    const authorList = document.querySelectorAll('a[href^="#author-"]');
+
+    /* START LOOP: for each link */
+    for(const author of authorList){
+      /* add tagClickHandler as event listener for that link */
+      author.addEventListener('click', authorClickHandler);
+
+      /* END LOOP: for each link */
     }
   };
 
@@ -280,6 +294,9 @@
     const authorTag = href.replace('#author-', ''); //tag remove to get word (#tag-cat- > remove #tag- > cat )
     console.log(authorTag);
 
+    /* [DONE] addClickListener to find author */
+    addClickListenersToAuthors('[data-author="' + authorTag + '"]');
+
     /* [DONE] find all tag links with class author */
     document.querySelectorAll('a.active[href^="#tag-"]');
     const authorList = document.querySelectorAll('a.active[href^="#tag-"]');
@@ -304,21 +321,8 @@
       /* END LOOP: for each link */
     }
 
-    /* Authors clickListener */
-    const addClickListenersToAuthors = function(){
-    /* [DONE] Find links with tags */
-      const authorList = document.querySelectorAll('a[href^="#author-"]');
-
-      /* START LOOP: for each link */
-      for(const author of authorList){
-      /* add tagClickHandler as event listener for that link */
-        author.addEventListener('click', authorClickHandler);
-
-        /* END LOOP: for each link */
-      }
-    };
-    addClickListenersToAuthors('[data-author="' + authorTag + '"]');
-    authorClickHandler;
+    /* [DONE] execute function authorClickHandler */
+    authorClickHandler('[data-tags = "generaTitleLinks + author"');
 
   };
 
