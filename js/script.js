@@ -287,9 +287,10 @@
 
     /* END LOOP: for each link */
     }
-  }
 
-  generateTitleLinks('[data-author="' + authorTag + '"]');
+    generateTitleLinks('[data-author="' + authorTag + '"]');
+
+  };
 
 
   /* [DONE] execute function authorClickHandler */
@@ -307,5 +308,7 @@
 
       /* END LOOP: for each link */
     }
-  }
-};
+  };
+
+  addClickListenersToAuthors();
+}
