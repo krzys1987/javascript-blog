@@ -1,15 +1,25 @@
 {
   //Strict Mode
   'use strict';
-  /*
-  const opts = {
-    articleSelector = '.post',
-    titleSelector = '.post-title',
-    titleListSelector = '.titles',
-    articleTagsSelector = '.post-tags .list',
-    tagsListSelector = '.sidebar .list.tags';
-    //authorsListSelector = ;
+
+  /* [DONE] define sript options
+  const opts.articleSelector = '.post',
+    opts.titleSelector = '.post-title',
+    opts.titleListSelector = '.titles',
+    opts.articleTagsSelector = '.post-tags .list',
+    opts.articleAuthorSelector = '.post-author',
+    opts.tagsListSelector = '.sidebar .list.tags';
     */
+
+  /* [DONE] define sript options */
+  const opts = {
+    articleSelector: '.post',
+    titleSelector: '.post-title',
+    titleListSelector: '.titles',
+    articleTagsSelector: '.post-tags .list',
+    tagsListSelector: '.sidebar .list.tags',
+    articleAuthorSelector: '.post-author'
+  };
 
   const titleClickHandler = function() {
     const clickedElement = this;
@@ -46,25 +56,19 @@
     targetArticle.classList.add('active');
   };
 
-  /* [DONE] define sript options */
-  const optArticleSelector = '.post',
-    optTitleSelector = '.post-title',
-    optTitleListSelector = '.titles',
-    optArticleTagsSelector = '.post-tags .list',
-    optArticleAuthorSelector = '.post-author',
-    optTagsListSelector = '.sidebar .list.tags';
+
 
   // [DONE] custom selector
   const generateTitleLinks = function(customSelector = ''){
     console.log(customSelector);
 
     /* [DONE] remove contents of titleList */
-    const titleList = document.querySelector(optTitleListSelector);
+    const titleList = document.querySelector(opts.titleListSelector);
     titleList.innerHTML = '';
 
     /* [DONE] for each article */
-    const articles = document.querySelectorAll(optArticleSelector + customSelector);
-    //const articles = artice.querySelectorAll(optArticleSelector);
+    const articles = document.querySelectorAll(opts.articleSelector + customSelector);
+    //const articles = artice.querySelectorAll(opts.articleSelector);
 
     for (let article of articles) {
       /* [DONE] get the article id */
@@ -73,7 +77,7 @@
       console.log(articleId);
 
       /* [DONE] find the title element */
-      const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+      const articleTitle = article.querySelector(opts.titleSelector).innerHTML;
       //What it does? Create a constant value which look for - article - class .post-title. Search target: html
 
       /* [DONE] get the title from the title element */
@@ -108,7 +112,7 @@
     for(let article of articles){
 
       /* [DONE] find tags wrapper */
-      const tagWrapper = article.querySelector(optArticleTagsSelector);
+      const tagWrapper = article.querySelector(opts.articleTagsSelector);
 
       /* [DONE] make html variable with empty string */
       let html = '';
@@ -148,7 +152,7 @@
     }
 
     /* [NEW] find list of tags in right column */
-    const tagList = document.querySelector(optTagsListSelector);
+    const tagList = document.querySelector(opts.tagsListSelector);
 
     /* [NEW] create variable for all links HTML code */
     let allTagsHTML = '';
@@ -231,7 +235,7 @@
     for(let article of articles){
 
       /* [DONE] find author wrapper */
-      const authorWrapper = article.querySelector(optArticleAuthorSelector);
+      const authorWrapper = article.querySelector(opts.articleAuthorSelector);
 
       /* [DONE] get tags from data-tags attribute */
       const articleAuthor = article.getAttribute('data-author');
