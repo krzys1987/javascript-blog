@@ -295,5 +295,6 @@ Tag
   };
 
   addClickListenersToAuthors();
+}
 
   /* authorClickHandlder */

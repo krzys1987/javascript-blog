@@ -176,7 +176,6 @@
 
     /* [DONE] make a new constant "href" and read the attribute "href" of the clicked element */
     const href = clickedElement.getAttribute('href');
-    console.log(href);
 
     /* [DONE] make a new constant "tag" and extract tag from the "href" constant */
     const tag = href.replace('#tag-', ''); //tag remove to get word (#tag-cat- > remove #tag- > cat )
@@ -243,7 +242,7 @@
 
       /* [DONE] insert HTML of all the links into the tags wrapper */
 
-      authorWrapper.innerHTML = article + articleAuthor;
+      authorWrapper.innerHTML = linkHTML; //[potencial error] previously had article + articleAuthor;
 
     }
   };
@@ -268,14 +267,13 @@
     console.log(authorTag);
 
     /* [DONE] find all tag links with class active author */
-    const activeAuthors = document.querySelectorAll('a.active[href^="#tag-"]');
+    const activeAuthors = document.querySelectorAll('a.active[href^="#author-"]'); //[potentiall error]previously had #tag
 
     /* [DONE] START LOOP: for each active tag link */
     for(const author of activeAuthors){
       /* remove class active */
       author.classList.remove('active'); // remove class active from link
-
-    /* [DONE] END LOOP: for each active tag link */
+	/* [DONE] END LOOP: for each active tag link */
     }
 
     /* [DONE] Find links with author */
@@ -291,10 +289,6 @@
     generateTitleLinks('[data-author="' + authorTag + '"]');
 
   };
-
-
-  /* [DONE] execute function authorClickHandler */
-  //authorClickHandler('[data-tags = "generaTitleLinks + author"');
 
   /* [DONE]] find posts with authors */
   const addClickListenersToAuthors = function(){
