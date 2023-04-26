@@ -273,7 +273,7 @@
     for(const author of activeAuthors){
       /* remove class active */
       author.classList.remove('active'); // remove class active from link
-	/* [DONE] END LOOP: for each active tag link */
+      /* [DONE] END LOOP: for each active tag link */
     }
 
     /* [DONE] Find links with author */
