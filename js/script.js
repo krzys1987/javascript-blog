@@ -294,7 +294,7 @@
 
 
   /* [DONE] execute function authorClickHandler */
-  authorClickHandler('[data-tags = "generaTitleLinks + author"');
+  //authorClickHandler('[data-tags = "generaTitleLinks + author"');
 
   /* [DONE]] find posts with authors */
   const addClickListenersToAuthors = function(){
