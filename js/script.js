@@ -7,7 +7,7 @@
     opts.titleSelector = '.post-title',
     opts.titleListSelector = '.titles',
     opts.articleTagsSelector = '.post-tags .list',
-    opts.articleAuthorSelector = '.post-author',
+    opts.authorSelector = '.post-author',
     opts.tagsListSelector = '.sidebar .list.tags';
     */
 
@@ -19,6 +19,7 @@
     articleTagsSelector: '.post-tags .list',
     tagsListSelector: '.sidebar .list.tags',
     articleAuthorSelector: '.post-author'
+    //authorsListSelector:
   };
 
   const titleClickHandler = function() {
@@ -228,29 +229,68 @@
   addClickListenersToTags();
 
   const generateAuthors = function() {
+
+    /* [NEW] create a new variable allAuthors, an empty object */
+    let allAuthors = {};
+
     /* [DONE] find all articles */
     const articles = document.querySelectorAll('article');
+
 
     /* [DONE] START LOOP: for every article: */
     for(let article of articles){
 
       /* [DONE] find author wrapper */
-      const authorWrapper = article.querySelector(opts.articleAuthorSelector);
+      const authorWrapper = article.querySelector(opts.articleAuthorSelector); //Koddila says: opts.AuthorsListSelector but the option is not defined
+
+      /* [CAN'T SEE THE POINT] make html variable with empty string
+       let html = ''; */
 
       /* [DONE] get tags from data-tags attribute */
-      const articleAuthor = article.getAttribute('data-author');
+      const author = article.getAttribute('data-author');
 
       /* [DONE] generate HTML of the link */
-      const linkHTML = '<li><a href="#author-' + articleAuthor + '"><span>' + articleAuthor + '</span></a></li>';
-      console.log(linkHTML);
+      const authorLinkHTML = '<li><a href="#author-' + author + '"><span>' + author + '</span></a></li>';
+      console.log(authorLinkHTML);
 
       /* [DONE] insert HTML of all the links into the tags wrapper */
 
-      authorWrapper.innerHTML = linkHTML; //[potencial error] previously had article + articleAuthor;
+      authorWrapper.innerHTML = authorLinkHTML; //[potencial error] previously had article + author;
 
+      /* [DONE] End of loop for each article */
     }
+    /* [DONE] End of loop for every article */
   };
 
+  /* [DONE] find all links with custom tag author */
+  let author = document.querySelectorAll('[href^="#author-"]');
+
+  /* [NEW] find list of authors in right column */
+  const authorList = document.querySelector(author);
+
+  /* [NEW] create variable for all links HTML code */
+  let allAuthorsHTML = '';
+
+  /* [NEW] check if this link is NOT already in allAuthors */
+  if(!authorList[author]){
+    /* [NEW] add tag to allTags object */
+    authorList[author] = 1;
+  } else {
+    authorList[author] ++;
+
+  /* [NEW] END LOOP: for each tag in authorList: */
+  }
+
+
+  /* [NEW] START LOOP: for each author in authorList:
+  for(let author authorList){
+    /* [NEW] generate code of a link and add it to allAuthorsHTML *//*
+    allAuthorsHTML += '<li><a href="#tag-' + author + '"><span>' + author + ' (' + authorList[author] + ')</span></a></li>';
+  }
+  */
+
+  /*[NEW] add HTML from allAuthorsHTML to tagList */
+  authorList.innerHTML = allAuthorsHTML;
   generateAuthors();
 
   /* authorClickHandlder */
@@ -270,7 +310,10 @@
     const authorTag = href.replace('#author-', ''); //tag remove to get word (#tag-cat- > cat )
     console.log(authorTag);
 
-    /* [DONE] find all tag links with class active author */
+    /* [TO REVIEW] find all links with custom tag author */
+    const author = document.querySelectorAll('a[href^="#author-"]');
+
+    /* [DONE] find all links with class active author */
     const activeAuthors = document.querySelectorAll('a.active[href^="#author-"]'); //[potentiall error]previously had #tag
 
     /* [DONE] START LOOP: for each active tag link */
