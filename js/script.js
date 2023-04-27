@@ -2,15 +2,6 @@
   //Strict Mode
   'use strict';
 
-  /* [DONE] define sript options
-  const opts.articleSelector = '.post',
-    opts.titleSelector = '.post-title',
-    opts.titleListSelector = '.titles',
-    opts.articleTagsSelector = '.post-tags .list',
-    opts.authorSelector = '.post-author',
-    opts.tagsListSelector = '.sidebar .list.tags';
-    */
-
   /* [DONE] define sript options */
   const opts = {
     articleSelector: '.post',
