@@ -228,17 +228,15 @@
   generateTags();
   addClickListenersToTags();
 
-  const generateAuthors = function() {
-
+  const generateAuthors = function () {
     /* [NEW] create a new variable allAuthors, an empty object */
     let allAuthors = {};
 
     /* [DONE] find all articles */
     const articles = document.querySelectorAll('article');
 
-
     /* [DONE] START LOOP: for every article: */
-    for(let article of articles){
+    for (let article of articles) {
 
       /* [DONE] find author wrapper */
       const authorWrapper = article.querySelector(opts.articleAuthorSelector); //Koddila says: opts.AuthorsListSelector but the option is not defined
@@ -257,40 +255,36 @@
 
       authorWrapper.innerHTML = authorLinkHTML; //[potencial error] previously had article + author;
 
+      /* [NEW] check if this link is NOT already in allAuthors */
+      if (!allAuthors[author]) {
+        /* [NEW] add tag to allTags object */
+        allAuthors[author] = 1;
+      } else {
+        allAuthors[author]++;
+      }
+
       /* [DONE] End of loop for each article */
     }
     /* [DONE] End of loop for every article */
+
+
+    /* [NEW] find list of authors in right column */
+    const authorList = document.querySelector('.list.authors');
+
+    /* [NEW] create variable for all links HTML code */
+    let allAuthorsHTML = '';
+
+
+    /* [NEW] START LOOP: for each author in authorList: */
+    for (let author in allAuthors) {
+      /* [NEW] generate code of a link and add it to allAuthorsHTML */
+      allAuthorsHTML += '<li><a href="#author-' + author + '"><span>' + author + ' (' + allAuthors[author] + ')</span></a></li>';
+    }
+
+
+    /*[NEW] add HTML from allAuthorsHTML to tagList */
+    authorList.innerHTML = allAuthorsHTML;
   };
-
-  /* [DONE] find all links with custom tag author */
-  let author = document.querySelectorAll('[href^="#author-"]');
-
-  /* [NEW] find list of authors in right column */
-  const authorList = document.querySelector(author);
-
-  /* [NEW] create variable for all links HTML code */
-  let allAuthorsHTML = '';
-
-  /* [NEW] check if this link is NOT already in allAuthors */
-  if(!authorList[author]){
-    /* [NEW] add tag to allTags object */
-    authorList[author] = 1;
-  } else {
-    authorList[author] ++;
-
-  /* [NEW] END LOOP: for each tag in authorList: */
-  }
-
-
-  /* [NEW] START LOOP: for each author in authorList:
-  for(let author authorList){
-    /* [NEW] generate code of a link and add it to allAuthorsHTML *//*
-    allAuthorsHTML += '<li><a href="#tag-' + author + '"><span>' + author + ' (' + authorList[author] + ')</span></a></li>';
-  }
-  */
-
-  /*[NEW] add HTML from allAuthorsHTML to tagList */
-  authorList.innerHTML = allAuthorsHTML;
   generateAuthors();
 
   /* authorClickHandlder */
