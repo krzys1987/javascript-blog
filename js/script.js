@@ -239,7 +239,7 @@
     for (let article of articles) {
 
       /* [DONE] find author wrapper */
-      const authorWrapper = article.querySelector(opts.articleAuthorSelector); //Koddila says: opts.AuthorsListSelector but the option is not defined
+      const authorWrapper = article.querySelector(opts.articleAuthorSelector);
 
       /* [CAN'T SEE THE POINT] make html variable with empty string
        let html = ''; */
@@ -253,7 +253,7 @@
 
       /* [DONE] insert HTML of all the links into the tags wrapper */
 
-      authorWrapper.innerHTML = authorLinkHTML; //[potencial error] previously had article + author;
+      authorWrapper.innerHTML = authorLinkHTML;
 
       /* [NEW] check if this link is NOT already in allAuthors */
       if (!allAuthors[author]) {
@@ -285,6 +285,7 @@
     /*[NEW] add HTML from allAuthorsHTML to tagList */
     authorList.innerHTML = allAuthorsHTML;
   };
+
   generateAuthors();
 
   /* authorClickHandlder */
