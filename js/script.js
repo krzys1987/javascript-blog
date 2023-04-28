@@ -90,6 +90,19 @@
 
   generateTitleLinks();
 
+  /* Calculate Tag parameters
+  const calculateTagParams = function(allTags){
+    const params = [
+      max: 0 //set to 0 initially to +
+      min: 999999,
+    ]
+    for(const tag in tags)
+      params;
+      if(tags[design] > params.max){
+
+      }
+  }
+
   /* add tags to articles */
 
   const generateTags = function() {
