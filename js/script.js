@@ -9,7 +9,9 @@
     titleListSelector: '.titles',
     articleTagsSelector: '.post-tags .list',
     tagsListSelector: '.sidebar .list.tags',
-    articleAuthorSelector: '.post-author'
+    articleAuthorSelector: '.post-author',
+    cloudClassCount: 5,
+    //cloudClassPrefix: tag-size-
     //authorsListSelector:
   };
 
@@ -90,22 +92,26 @@
 
   generateTitleLinks();
 
-  /* Calculate Tag parameters
-  const calculateTagParams = function(allTags){
-    const params = [
-      max: 0 //set to 0 initially to +
-      min: 999999,
-    ]
-    for(const tag in tags)
-      params;
-      if(tags[design] > params.max){
-
-      }
-  }
-
-  /* add tags to articles */
-
   const generateTags = function() {
+
+    //[NEW] set an object parameters
+    const params = {
+      min: 999999,
+      max: 0,
+    };
+
+    const calculateTagParams = function(){
+      for(const tag in allTags){
+        if(allTags[tag] < params.min){
+          console.log(tag + ' is used');
+          params.min = allTags[tag];
+        }
+        if(allTags[tag] > params.max){
+          params.max = allTags[tag];
+        }
+      }
+    };
+
     /* [NEW] create a new variable allTags with an empty object */
     let allTags = { };
 
@@ -156,14 +162,57 @@
       /* [DONE] END LOOP: for every article: */
     }
 
+    /* [DONE] execute function calculateTagParams */
+    calculateTagParams();
+    console.log(calculateTagParams);
+    console.log(params); //Show min and max? But why?
+
     /* [NEW] find list of tags in right column */
     const tagList = document.querySelector(opts.tagsListSelector);
 
     /* [NEW] create variable for all links HTML code */
     let allTagsHTML = '';
 
+    calculateTagParams(); //don't know why it is here
+
+    /* [NEW] using tags to change display */
+
     /* [NEW] START LOOP: for each tag in allTags: */
     for(let tag in allTags){
+      if (allTags[tag] > params.max/2) { //where number (2) comes from?
+        className = 'tag-size-4';
+      }
+      else if (allTags[tag] < params.max/4) {
+        className = 'tag-size-1';
+      }
+      else if (allTags[tag] > params.max/1.5) {
+        className = 'tag-size-5';
+      }
+      else if (allTags[tag] < params.max/3) {
+        className = 'tag-size-3';
+      } else {
+        className = 'tag-size-2';
+      }
+
+      /* [NEW] calculateTagClass
+
+      classNumber = Math.floor( 0.5 * 5 + 1 );
+
+      classNumber = Math.floor( 0.5 * cloudClassCount + 1 );
+
+      classNumber = Math.floor( ( 4 / 8 ) * cloudClassCount + 1 );
+
+      classNumber = Math.floor( ( (6 - 2) / (10 - 2) ) * cloudClassCount + 1 );
+
+      classNumber = Math.floor( ( (count - 2) / (10 - 2) ) * cloudClassCount + 1 );
+
+      classNumber = Math.floor( ( (count - 2) / (params.max - 2) ) * cloudClassCount + 1 );
+
+      classNumber = Math.floor( ( (count - params.min) / (params.max - 2) ) * cloudClassCount + 1 );
+
+      classNumber = Math.floor( ( (count - params.min) / (params.max - params.min) ) * cloudClassCount + 1 );
+      */
+
       /* [NEW] generate code of a link and add it to allTagsHTML */
       allTagsHTML += '<li><a href="#tag-' + tag + '"><span>' + tag + ' (' + allTags[tag] + ')</span></a></li>';
     }
