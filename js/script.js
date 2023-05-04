@@ -2,7 +2,34 @@
   //Strict Mode
   'use strict';
 
-  /* [DONE] define sript options */
+  //[DONE] define sript options
+  const select = {
+    all: {
+      articles: '.post',
+      linksTo: {
+        tags: 'a.active[href^="#tag-"]',
+      },
+    },
+    article: {
+      title: '.post-title',
+      tags: '.post-tags .list',
+      author: '.post-author',
+    },
+    listOf: {
+      titles: '.titles',
+      tags: '.tags.list',
+      authors: '.authors.list',
+    },
+  };
+
+  const opts = {
+    tagSizes: {
+      count: 5,
+      classPrefix: 'tag-size-',
+    },
+  };
+
+  /*
   const opts = {
     articleSelector: '.post',
     titleSelector: '.post-title',
@@ -14,7 +41,7 @@
     //cloudClassPrefix: tag-size-
     //authorsListSelector:
   };
-
+  */
   const titleClickHandler = function() {
     const clickedElement = this;
     /* [DONE] remove class 'active' from all article links  */
@@ -57,7 +84,7 @@
     console.log(customSelector);
 
     /* [DONE] remove contents of titleList */
-    const titleList = document.querySelector(opts.titleListSelector);
+    const titleList = document.querySelector(select.listOf.titles);
     titleList.innerHTML = '';
 
     /* [DONE] for each article */
@@ -195,21 +222,13 @@
       }
 
       /* [NEW] calculateTagClass
-
       classNumber = Math.floor( 0.5 * 5 + 1 );
-
       classNumber = Math.floor( 0.5 * cloudClassCount + 1 );
-
       classNumber = Math.floor( ( 4 / 8 ) * cloudClassCount + 1 );
-
       classNumber = Math.floor( ( (6 - 2) / (10 - 2) ) * cloudClassCount + 1 );
-
       classNumber = Math.floor( ( (count - 2) / (10 - 2) ) * cloudClassCount + 1 );
-
       classNumber = Math.floor( ( (count - 2) / (params.max - 2) ) * cloudClassCount + 1 );
-
       classNumber = Math.floor( ( (count - params.min) / (params.max - 2) ) * cloudClassCount + 1 );
-
       classNumber = Math.floor( ( (count - params.min) / (params.max - params.min) ) * cloudClassCount + 1 );
       */
 
