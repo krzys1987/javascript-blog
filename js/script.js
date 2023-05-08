@@ -54,12 +54,10 @@
     }
 
     /* [DONE] add class 'active' to the clicked link */
-
     console.log('clickedElement:', clickedElement);
     clickedElement.classList.add('active');
 
     /* [DONE] remove class 'active' from all articles */
-
     const activeArticles = document.querySelectorAll('.post.active');
     for (let activeArticle of activeArticles) {
       activeArticle.classList.remove('active');
@@ -70,10 +68,8 @@
     console.log('articleSelector');
 
     /* [DONE] find the correct article using the selector (value of 'href' attribute) */
-
-    const targetArticle = document.querySelector(opts.select.all.articles);
+    const targetArticle = document.querySelector(articleSelector);
     console.log('targetArticle:', targetArticle);
-
 
     /* [DONE] add class 'active' to the correct article */
     targetArticle.classList.add('active');
@@ -208,7 +204,7 @@
 
     /* [NEW] add a variable for tags size at right column */
     let className = '';
-    
+
     /* [NEW] START LOOP: for each tag in allTags: */
     for(let tag in allTags){
       if (allTags[tag] > params.max/2) {
@@ -227,6 +223,9 @@
       }
 
       tag.ClassName;
+
+      /*[NEW] add HTML from allTagsHTML to tagList */
+      tagList.innerHTML = allTagsHTML;
 
       /* [NEW] calculateTagClass
       const calculateTagClass = function (CloudClassPrefix) { //not sure options attribute
@@ -249,8 +248,7 @@
 
     /* [NEW] END LOOP: for each tag in allTags: */
 
-    /*[NEW] add HTML from allTagsHTML to tagList */
-    tagList.innerHTML = allTagsHTML;
+
 
   };
 
