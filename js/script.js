@@ -69,7 +69,7 @@
 
     /* [DONE] find the correct article using the selector (value of 'href' attribute) */
 
-    const targetArticle = document.querySelector(articleSelector);
+    const targetArticle = document.querySelector(select.all.articles);
     console.log('targetArticle:', targetArticle);
 
 
@@ -77,14 +77,12 @@
     targetArticle.classList.add('active');
   };
 
-
-
   // [DONE] custom selector
   const generateTitleLinks = function(customSelector = ''){
     console.log(customSelector);
 
     /* [DONE] remove contents of titleList */
-    const titleList = document.querySelectorAll(select.listOf.titles);
+    const titleList = document.querySelectorAll(select.listOf.titles); /* select.listOf */
     titleList.innerHTML = '';
 
     /* [DONE] for each article */
@@ -150,7 +148,7 @@
     for(let article of articles){
 
       /* [DONE] find tags wrapper */
-      const tagWrapper = article.querySelector(opts.articleTagsSelector);
+      const tagWrapper = article.querySelector(select.article.tags);
 
       /* [DONE] make html variable with empty string */
       let html = '';
@@ -203,6 +201,11 @@
     calculateTagParams(); //don't know why it is here
 
     /* [NEW] using tags to change display */
+
+    /* [NEW] set a variable for tags name */
+
+    /* [NEW] add a variable for tags size at right column */
+    let className = document.querySelectorAll.getElementsByClassName('article').getAttribute('data-tags');
 
     /* [NEW] START LOOP: for each tag in allTags: */
     for(let tag in allTags){
