@@ -75,7 +75,6 @@
     targetArticle.classList.add('active');
   };
 
-  // [DONE] custom selector
   const generateTitleLinks = function(customSelector = ''){
     console.log(customSelector);
 
@@ -85,31 +84,37 @@
 
     /* [DONE] for each article */
     const articles = document.querySelectorAll(select.all.articles + customSelector);
-    
+
+    //[REVIEW] set up a variable? (let html = '';) What for?
+    let html = '';
+
     for (let article of articles) {
       /* [DONE] get the article id */
       const articleId = article.getAttribute('id');
-
       console.log(articleId);
 
       /* [DONE] find the title element */
-      const articleTitle = article.querySelector(opts.titleSelector).innerHTML;
-      //What it does? Create a constant value which look for - article - class .post-title. Search target: html
+      const articleTitle = article.querySelector(select.article.title).innerHTML;
 
-      /* [DONE] get the title from the title element */
-
+      /* [DONE] get the title from the title element and create a HTML link*/
       const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
-      console.log('linkHTML');
-
-      /* [DONE] create HTML of the link */
-      titleList.innerHTML = titleList.innerHTML + linkHTML;
-
-      const links = document.querySelectorAll('.titles a');
-      for (let link of links) {
-        link.addEventListener('click', titleClickHandler);
-      }
+      //how can I simplify the link above? Create a data object contains articleId, articleTitle > articleLink(data)
+      /* const linkData = {id: articleId title: articleTitle} const linkHTML = templates.articleLink(linkData);
+      BUT WHAT IS templates and articleLink */
+      html = html + linkHTML;
 
     }
+
+    /* [DONE] create HTML of the link */
+    titleList.innerHTML = titleList.innerHTML + linkHTML;
+
+    /* [DONE] Find links to articles */
+    const links = document.querySelectorAll('.titles a');
+    /* [DONE] Watch links for click */
+    for (let link of links) {
+      link.addEventListener('click', titleClickHandler);
+    }
+
   };
 
   generateTitleLinks();
@@ -130,25 +135,37 @@
         }
         if(allTags[tag] > params.max){
           params.max = allTags[tag];
+          console.log(tag + ' is used');
         }
       }
+      return params //honestly it wasn't my idea, is return executable at all?
     };
+
+    /*
+    const calculateTagClass = function (count, params) {
+    const normalizedCount = count - params.min;
+    const normalizedMax = params.max - params.min;
+    const percentage = normalizedCount / normalizedMax;
+    const classNumber = Math.floor(percentage * (opts.tagSizes.count - 1) + 1);
+    const className = opts.tagSizes.classPrefix + classNumber;
+    return className;
+    };
+    */
 
     /* [NEW] create a new variable allTags with an empty object */
     let allTags = { };
 
     console.log('created a new variable allTag with an empty array');
     /* [DONE] find all articles */
-    const articles = document.querySelectorAll('article');
+    const articles = document.querySelectorAll(select.all.articles);
 
     /* [DONE] START LOOP: for every article: */
     for(let article of articles){
+      /* [DONE] make html variable with empty string */
+      let html = '';
 
       /* [DONE] find tags wrapper */
       const tagWrapper = article.querySelector(select.article.tags);
-
-      /* [DONE] make html variable with empty string */
-      let html = '';
 
       /* [DONE] get tags from data-tags attribute */
       const articleTags = article.getAttribute('data-tags');
@@ -194,8 +211,6 @@
 
     /* [NEW] create variable for all links HTML code */
     let allTagsHTML = '';
-
-    calculateTagParams(); //don't know why it is here
 
     /* [NEW] using tags to change display */
 
