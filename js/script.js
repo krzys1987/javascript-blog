@@ -42,7 +42,8 @@
     //authorsListSelector:
   };
   */
-  const titleClickHandler = function() {
+
+  const titleClickHandler = function(event) {
     const clickedElement = this;
     /* [DONE] remove class 'active' from all article links  */
 
@@ -69,7 +70,7 @@
 
     /* [DONE] find the correct article using the selector (value of 'href' attribute) */
 
-    const targetArticle = document.querySelector(select.all.articles);
+    const targetArticle = document.querySelector(opts.articleSelector);
     console.log('targetArticle:', targetArticle);
 
 
@@ -77,14 +78,12 @@
     targetArticle.classList.add('active');
   };
 
-
-
   // [DONE] custom selector
   const generateTitleLinks = function(customSelector = ''){
     console.log(customSelector);
 
     /* [DONE] remove contents of titleList */
-    const titleList = document.querySelectorAll(select.listOf.titles); /* select.listOf */
+    const titleList = document.querySelectorAll(opts.titleSelector);
     titleList.innerHTML = '';
 
     /* [DONE] for each article */
@@ -203,6 +202,9 @@
     calculateTagParams(); //don't know why it is here
 
     /* [NEW] using tags to change display */
+
+    /* [NEW} set up a variable for a class of allTags */
+    let className = document.getElementsByClassName('data-tags.list tags');
 
     /* [NEW] START LOOP: for each tag in allTags: */
     for(let tag in allTags){
