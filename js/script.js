@@ -103,10 +103,9 @@
       BUT WHAT IS templates and articleLink */
       html = html + linkHTML;
 
+      /* [DONE] create HTML of the link */
+      titleList.innerHTML = titleList.innerHTML + linkHTML;
     }
-
-    /* [DONE] create HTML of the link */
-    titleList.innerHTML = titleList.innerHTML + linkHTML;
 
     /* [DONE] Find links to articles */
     const links = document.querySelectorAll('.titles a');
@@ -138,7 +137,7 @@
           console.log(tag + ' is used');
         }
       }
-      return params //honestly it wasn't my idea, is return executable at all?
+      return params; //honestly it wasn't my idea, is return executable at all?
     };
 
     /*
@@ -166,6 +165,8 @@
 
       /* [DONE] find tags wrapper */
       const tagWrapper = article.querySelector(select.article.tags);
+      /* [DONE] clear html: remove tags from article */
+      tagWrapper.innerHTML = '';
 
       /* [DONE] get tags from data-tags attribute */
       const articleTags = article.getAttribute('data-tags');
@@ -179,6 +180,8 @@
 
         /* [DONE] generate HTML of the link */
         const linkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
+        //A way to simplidy? Create an object HTMLData, put inside {id: tag, title: tag},
+        //create a constant linkHTML = templates.tagLink(HTMLData);
 
         /* [DONE] add generated code to html variable */
         html = html + linkHTML;
@@ -207,22 +210,22 @@
     console.log(params); //Show min and max? But why?
 
     /* [NEW] find list of tags in right column */
-    const tagList = document.querySelector(opts.tagsListSelector);
+    const tagList = document.querySelector(select.listOf.tags);
 
     /* [NEW] create variable for all links HTML code */
     let allTagsHTML = '';
 
     /* [NEW] using tags to change display */
 
-    /* [NEW] set a variable for tags name */
+    /* [NEW] defining a variable for tags name */
 
-    /* [NEW] add a variable for tags size at right column */
+    /* [NEW] defining an empty variable for tags size at right column */
     let className = '';
 
     /* [NEW] START LOOP: for each tag in allTags: */
     for(let tag in allTags){
       if (allTags[tag] > params.max/2) {
-        className = 'tag-size-4'; //JS class add, but shouldn't it be specify - tag.className = 'tag-size-4'; ?
+        className = 'tag-size-4';
       }
       else if (allTags[tag] < params.max/4) {
         className = 'tag-size-1';
@@ -236,6 +239,7 @@
         className = 'tag-size-2';
       }
 
+      /* [NEW] add value of className variable to tag.className constant */
       tag.ClassName;
 
       /*[NEW] add HTML from allTagsHTML to tagList */
@@ -334,7 +338,7 @@
     for (let article of articles) {
 
       /* [DONE] find author wrapper */
-      const authorWrapper = article.querySelector(opts.articleAuthorSelector);
+      const authorWrapper = article.querySelector(select.all.author);
 
       /* [CAN'T SEE THE POINT] make html variable with empty string
        let html = ''; */
