@@ -207,8 +207,8 @@
     /* [NEW] set a variable for tags name */
 
     /* [NEW] add a variable for tags size at right column */
-    let className = document.querySelectorAll.getElementsByClassName('article').getAttribute('data-tags');
-
+    let className = '';
+    
     /* [NEW] START LOOP: for each tag in allTags: */
     for(let tag in allTags){
       if (allTags[tag] > params.max/2) {
@@ -226,7 +226,7 @@
         className = 'tag-size-2';
       }
 
-      tag.ClassName
+      tag.ClassName;
 
       /* [NEW] calculateTagClass
       const calculateTagClass = function (CloudClassPrefix) { //not sure options attribute
