@@ -69,7 +69,7 @@
 
     /* [DONE] find the correct article using the selector (value of 'href' attribute) */
 
-    const targetArticle = document.querySelector(articleSelector);
+    const targetArticle = document.querySelector(select.all.articles);
     console.log('targetArticle:', targetArticle);
 
 
@@ -84,7 +84,7 @@
     console.log(customSelector);
 
     /* [DONE] remove contents of titleList */
-    const titleList = document.querySelectorAll(select.listOf.titles);
+    const titleList = document.querySelectorAll(select.listOf.titles); /* select.listOf */
     titleList.innerHTML = '';
 
     /* [DONE] for each article */
