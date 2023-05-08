@@ -44,7 +44,7 @@
   */
 
   const titleClickHandler = function(event) {
-    //event.preventDefault();
+    event.preventDefault();
     const clickedElement = this;
 
     /* [DONE] remove class 'active' from all article links  */
