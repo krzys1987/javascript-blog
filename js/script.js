@@ -80,13 +80,12 @@
     console.log(customSelector);
 
     /* [DONE] remove contents of titleList */
-    const titleList = document.querySelectorAll(select.listOf.titles); /* select.listOf */
+    const titleList = document.querySelectorAll(select.listOf.titles);
     titleList.innerHTML = '';
 
     /* [DONE] for each article */
-    const articles = document.querySelectorAll(opts.articleSelector + customSelector);
-    //const articles = artice.querySelectorAll(opts.articleSelector);
-
+    const articles = document.querySelectorAll(select.all.articles + customSelector);
+    
     for (let article of articles) {
       /* [DONE] get the article id */
       const articleId = article.getAttribute('id');
