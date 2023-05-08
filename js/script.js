@@ -84,7 +84,7 @@
     console.log(customSelector);
 
     /* [DONE] remove contents of titleList */
-    const titleList = document.querySelector(select.listOf.titles);
+    const titleList = document.querySelectorAll(select.listOf.titles);
     titleList.innerHTML = '';
 
     /* [DONE] for each article */
@@ -206,8 +206,8 @@
 
     /* [NEW] START LOOP: for each tag in allTags: */
     for(let tag in allTags){
-      if (allTags[tag] > params.max/2) { //where number (2) comes from?
-        className = 'tag-size-4';
+      if (allTags[tag] > params.max/2) {
+        className = 'tag-size-4'; //JS class add, but shouldn't it be specify - tag.className = 'tag-size-4'; ?
       }
       else if (allTags[tag] < params.max/4) {
         className = 'tag-size-1';
@@ -222,6 +222,7 @@
       }
 
       /* [NEW] calculateTagClass
+      const calculateTagClass = function (CloudClassPrefix) { //not sure options attribute
       classNumber = Math.floor( 0.5 * 5 + 1 );
       classNumber = Math.floor( 0.5 * cloudClassCount + 1 );
       classNumber = Math.floor( ( 4 / 8 ) * cloudClassCount + 1 );
@@ -230,6 +231,9 @@
       classNumber = Math.floor( ( (count - 2) / (params.max - 2) ) * cloudClassCount + 1 );
       classNumber = Math.floor( ( (count - params.min) / (params.max - 2) ) * cloudClassCount + 1 );
       classNumber = Math.floor( ( (count - params.min) / (params.max - params.min) ) * cloudClassCount + 1 );
+      CloudClassPrefix
+      }
+
       */
 
       /* [NEW] generate code of a link and add it to allTagsHTML */
