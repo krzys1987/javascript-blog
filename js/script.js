@@ -332,7 +332,7 @@
     let allAuthors = {};
 
     /* [DONE] find all articles */
-    const articles = document.querySelectorAll('select.all.articles');
+    const articles = document.querySelectorAll(select.all.articles);
 
     /* [DONE] START LOOP: for every article: */
     for (let article of articles) {
