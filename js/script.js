@@ -79,7 +79,7 @@
     console.log(customSelector);
 
     /* [DONE] remove contents of titleList */
-    const titleList = document.querySelectorAll(select.listOf.titles);
+    const titleList = document.querySelector(select.listOf.titles);
     titleList.innerHTML = '';
 
     /* [DONE] for each article */
