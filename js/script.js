@@ -332,16 +332,15 @@
     let allAuthors = {};
 
     /* [DONE] find all articles */
-    const articles = document.querySelectorAll('article');
+    const articles = document.querySelectorAll('select.all.articles');
 
     /* [DONE] START LOOP: for every article: */
     for (let article of articles) {
 
       /* [DONE] find author wrapper */
-      const authorWrapper = article.querySelector(select.all.author);
-
-      /* [CAN'T SEE THE POINT] make html variable with empty string
-       let html = ''; */
+      const authorWrapper = article.querySelector(select.article.author);
+      /* [REVIEW, NEW, NICE] make html variable with empty string */
+      authorList.innerHTML = '';
 
       /* [DONE] get tags from data-tags attribute */
       const author = article.getAttribute('data-author');
