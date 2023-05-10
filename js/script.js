@@ -32,8 +32,11 @@
   /* [REVIEW - ERROR All post disappear] template options */
 
   const templates = {
-    articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML)
+    articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
+    tagLinkArticle: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
+    authorLinkArticle: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
     /* put here next templates */
+
   }
 
   /*
@@ -107,10 +110,6 @@
       const linkHTMLData = {id: articleId, title: articleTitle};
       const linkHTML = templates.articleLink(linkHTMLData);
 
-      //const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
-      //how can I simplify the link above? Create a data object contains articleId, articleTitle > articleLink(data)
-      /* const linkData = {id: articleId title: articleTitle} const linkHTML = templates.articleLink(linkData);
-      BUT WHAT IS templates and articleLink */
       html = html + linkHTML;
 
       /* [DONE] create HTML of the link */
