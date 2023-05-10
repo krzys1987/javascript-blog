@@ -29,6 +29,13 @@
     },
   };
 
+  /* [REVIEW - ERROR All post disappear] template options */
+
+  const templates = {
+    articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML)
+    /* put here next templates */
+  }
+
   /*
   const opts = {
     articleSelector: '.post',
@@ -442,4 +449,35 @@
   };
 
   addClickListenersToAuthors();
+
+  /* [NEW] using a Templates */
+
+  /*
+  const tplHelloSource = document.querySelector('#template-hello').innerHTML;
+
+  const tplHello = Handlebars.compile(tplHelloSource);
+  const dataHello = {firstName: 'John', lastName: 'Smith'};
+  let generatedHTML = tplHello(dataHello);
+
+  const targetElement = document.body;
+  targetElement.insertAdjacentHTML('beforeend', generatedHTML);
+
+  /* template filled with data fe */
+  /*
+  const dataHello2 = {firstName: 'Maria', lastName: 'Jones'};
+  generatedHTML = tplHello(dataHello2);
+  targetElement.insertAdjacentHTML('beforeend', generatedHTML);
+
+  console.log('tplHello:');
+  console.log(tplHelloSource);
+  console.log('=========');
+
+  console.log('dataHello:');
+  console.log(dataHello);
+  console.log('=========');
+
+  console.log('generatedHTML:');
+  console.log(generatedHTML);
+  console.log('=========');
+*/
 }
