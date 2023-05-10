@@ -339,8 +339,8 @@
 
       /* [DONE] find author wrapper */
       const authorWrapper = article.querySelector(select.article.author);
-      /* [REVIEW, NEW, NICE] make html variable with empty string */
-      authorList.innerHTML = '';
+      /* [REVIEW, IT CAUSE PROBLEMS: AUTHORS CLICKED ARE NOT FILTERED ] make html variable with empty string */
+      //authorList.innerHTML = '';
 
       /* [DONE] get tags from data-tags attribute */
       const author = article.getAttribute('data-author');
@@ -372,13 +372,11 @@
     /* [NEW] create variable for all links HTML code */
     let allAuthorsHTML = '';
 
-
     /* [NEW] START LOOP: for each author in authorList: */
     for (let author in allAuthors) {
       /* [NEW] generate code of a link and add it to allAuthorsHTML */
       allAuthorsHTML += '<li><a href="#author-' + author + '"><span>' + author + ' (' + allAuthors[author] + ')</span></a></li>';
     }
-
 
     /*[NEW] add HTML from allAuthorsHTML to tagList */
     authorList.innerHTML = allAuthorsHTML;
