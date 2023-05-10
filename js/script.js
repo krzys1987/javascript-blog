@@ -104,7 +104,10 @@
       const articleTitle = article.querySelector(select.article.title).innerHTML;
 
       /* [DONE] get the title from the title element and create a HTML link*/
-      const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+      const linkHTMLData = {id: articleId, title: articleTitle};
+      const linkHTML = templates.articleLink(linkHTMLData);
+
+      //const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
       //how can I simplify the link above? Create a data object contains articleId, articleTitle > articleLink(data)
       /* const linkData = {id: articleId title: articleTitle} const linkHTML = templates.articleLink(linkData);
       BUT WHAT IS templates and articleLink */
