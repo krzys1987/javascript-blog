@@ -367,7 +367,8 @@
 
 
     /* [NEW] find list of authors in right column */
-    const authorList = document.querySelector('.list.authors');
+    //const authorList = document.querySelector('.list.authors');
+    const authorList = document.querySelector(select.listOf.authors);
 
     /* [NEW] create variable for all links HTML code */
     let allAuthorsHTML = '';
