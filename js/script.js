@@ -365,9 +365,7 @@
     }
     /* [DONE] End of loop for every article */
 
-
     /* [NEW] find list of authors in right column */
-    //const authorList = document.querySelector('.list.authors');
     const authorList = document.querySelector(select.listOf.authors);
 
     /* [NEW] create variable for all links HTML code */
