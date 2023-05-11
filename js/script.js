@@ -30,7 +30,7 @@
     },
   };
 
-  /* [REVIEW - ERROR All post disappear] template options */
+  /* [NEW] template options */
 
   const templates = {
     articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
