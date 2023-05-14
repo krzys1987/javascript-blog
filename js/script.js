@@ -34,8 +34,8 @@
 
   const templates = {
     articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
-    //tagLinkArticle: Handlebars.compile(document.querySelector('#template-tag-Link-Article').innerHTML),
-    //authorLinkArticle: Handlebars.compile(document.querySelector('#template-author-Article').innerHTML),
+    tagLinkArticle: Handlebars.compile(document.querySelector('#template-tag-link-article').innerHTML),
+    authorLinkArticle: Handlebars.compile(document.querySelector('#template-author-article').innerHTML),
     /* put here next templates */
 
   }
