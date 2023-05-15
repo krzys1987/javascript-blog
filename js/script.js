@@ -196,7 +196,7 @@
         };
 
         //create a constant linkHTML
-        const linkHTML = templates.tagLink(HTMLData);
+        const linkHTML = templates.tagLink(linkHTMLData);
 
 
         /* [DONE] add generated code to html variable */
@@ -232,7 +232,7 @@
     let allTagsHTML = '';
 
     /* [NEW] create a constant an allTagsData with an tag object */
-    const allTagData = {tags: []};
+    const allTagsData = {tags: []};
 
     /* [NEW] using tags to change display */
 
