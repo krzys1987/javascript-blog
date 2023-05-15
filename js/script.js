@@ -39,7 +39,7 @@
     tagCloudLink: Handlebars.compile(document.querySelector('#template-tag-Cloud-Link').innerHTML),
     /* put here next templates */
 
-  }
+  };
 
   /*
   const opts = {
@@ -190,9 +190,14 @@
         console.log(articleTagsArray);
 
         /* [DONE] generate HTML of the link */
-        const linkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
-        //A way to simplidy? Create an object HTMLData, put inside {id: tag, title: tag},
-        //create a constant linkHTML = templates.tagLink(HTMLData);
+        const linkHTMLData = {
+          id: tag,
+          title: tag,
+        };
+
+        //create a constant linkHTML
+        const linkHTML = templates.tagLink(HTMLData);
+
 
         /* [DONE] add generated code to html variable */
         html = html + linkHTML;
@@ -362,6 +367,7 @@
       /* [DONE] generate HTML of the link */
       const authorLinkHTML = '<li><a href="#author-' + author + '"><span>' + author + '</span></a></li>';
       console.log(authorLinkHTML);
+
 
       /* [DONE] insert HTML of all the links into the tags wrapper */
 
