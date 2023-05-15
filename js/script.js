@@ -36,6 +36,7 @@
     articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
     tagLinkArticle: Handlebars.compile(document.querySelector('#template-tag-link-article').innerHTML),
     authorLinkArticle: Handlebars.compile(document.querySelector('#template-author-article').innerHTML),
+    tagCloudLink:
     /* put here next templates */
 
   }
