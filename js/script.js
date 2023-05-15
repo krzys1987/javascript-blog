@@ -196,7 +196,7 @@
         };
 
         //create a constant linkHTML
-        const linkHTML = templates.tagLink(linkHTMLData);
+        const linkHTML = templates.articleLink(linkHTMLData);
 
 
         /* [DONE] add generated code to html variable */
