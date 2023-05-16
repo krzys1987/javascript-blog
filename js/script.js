@@ -262,26 +262,27 @@
       tag.ClassName;
 
       /*[NEW] add HTML from allTagsHTML to tagList */
-      tagList.innerHTML = allTagsHTML;
+      //tagList.innerHTML = allTagsHTML;
+      tagList.innerHTML = templates.tagCloudLink(allTagsData);
+
 
       /* [NEW] calculateTagClass
-      const calculateTagClass = function (CloudClassPrefix) { //not sure options attribute
-      classNumber = Math.floor( 0.5 * 5 + 1 );
-      classNumber = Math.floor( 0.5 * cloudClassCount + 1 );
-      classNumber = Math.floor( ( 4 / 8 ) * cloudClassCount + 1 );
-      classNumber = Math.floor( ( (6 - 2) / (10 - 2) ) * cloudClassCount + 1 );
-      classNumber = Math.floor( ( (count - 2) / (10 - 2) ) * cloudClassCount + 1 );
-      classNumber = Math.floor( ( (count - 2) / (params.max - 2) ) * cloudClassCount + 1 );
-      classNumber = Math.floor( ( (count - params.min) / (params.max - 2) ) * cloudClassCount + 1 );
-      classNumber = Math.floor( ( (count - params.min) / (params.max - params.min) ) * cloudClassCount + 1 );
-      CloudClassPrefix
-      }
-
-      */
+      const calculateTagClass = function (count, params) {
+        classNumber = Math.floor( 0.5 * 5 + 1 );
+        classNumber = Math.floor( 0.5 * cloudClassCount + 1 );
+        classNumber = Math.floor( ( 4 / 8 ) * cloudClassCount + 1 );
+        classNumber = Math.floor( ( (6 - 2) / (10 - 2) ) * cloudClassCount + 1 );
+        classNumber = Math.floor( ( (count - 2) / (10 - 2) ) * cloudClassCount + 1 );
+        classNumber = Math.floor( ( (count - 2) / (params.max - 2) ) * cloudClassCount + 1 );
+        classNumber = Math.floor( ( (count - params.min) / (params.max - 2) ) * cloudClassCount + 1 );
+        classNumber = Math.floor( ( (count - params.min) / (params.max - params.min) ) * cloudClassCount + 1 );
+        CloudClassPrefix;
+      }; */
 
       /* [NEW] generate code of a link and add it to allTagsHTML */
       allTagsHTML += '<li><a href="#tag-' + tag + '"><span>' + tag + ' (' + allTags[tag] + ')</span></a></li>';
     }
+
 
     /* [NEW] END LOOP: for each tag in allTags: */
 
