@@ -229,7 +229,7 @@
     const tagList = document.querySelector(select.listOf.tags);
 
     /* [NEW] create variable for all links HTML code */
-    let allTagsHTML = '';
+    //let allTagsHTML = '';
 
     /* [NEW] create a constant an allTagsData with an tag object */
     const allTagsData = {tags: []};
