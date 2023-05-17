@@ -133,8 +133,8 @@
 
     //[NEW] set an object parameters
     const params = {
-      min: 999999,
-      max: 0,
+      min: 2,
+      max: 10,
     };
 
     /*
@@ -229,10 +229,12 @@
     const tagList = document.querySelector(select.listOf.tags);
 
     /* [NEW] create variable for all links HTML code */
-    //let allTagsHTML = '';
+    let allTagsHTML = '';
 
     /* [NEW] create a constant an allTagsData with an tag object contains array */
-    const allTagsData = {tags: []};
+    const allTagsData = {
+      tags: []
+    };
 
     /* [NEW] using tags to change display */
 
@@ -241,28 +243,30 @@
     /* [NEW] defining an empty variable for tags size at right column */
     let className = '';
 
+    const generateTagClassName = function (count, params) {
+      let classNumber = 0;
+
+      classNumber = Math.floor( 0.5 * 5 + 1 );
+      classNumber = Math.floor( 0.5 * opts.tagSizes.count + 1 );
+      classNumber = Math.floor( ( 4 / 8 ) * opts.tagSizes.count + 1 );
+      classNumber = Math.floor( ( (6 - 2) / (10 - 2) ) * opts.tagSizes.count + 1 );
+      classNumber = Math.floor( ( (count - 2) / (10 - 2) ) * opts.tagSizes.count + 1 );
+      classNumber = Math.floor( ( (count - 2) / (params.max - 2) ) * opts.tagSizes.count + 1 );
+      classNumber = Math.floor( ( (count - params.min) / (params.max - 2) ) * opts.tagSizes.count + 1 );
+      classNumber = Math.floor( ( (count - params.min) / (params.max - params.min) ) * opts.tagSizes.count + 1 );
+
+      return opts.tagSizes.classPrefix + classNumber;
+
+    };
+
     /* [NEW] START LOOP: for each tag in allTags: */
     for(let tag in allTags){
-      if (allTags[tag] > params.max/2) {
-        className = 'tag-size-4';
-      }
-      else if (allTags[tag] < params.max/4) {
-        className = 'tag-size-1';
-      }
-      else if (allTags[tag] > params.max/1.5) {
-        className = 'tag-size-5';
-      }
-      else if (allTags[tag] < params.max/3) {
-        className = 'tag-size-3';
-      } else {
-        className = 'tag-size-2';
-      }
 
-      //[NEW] add tag to obeject allTagsData.tag.array
       allTagsData.tags.push({
         tag: tag,
-        className: className //don't understand why
+        className: generateTagClassName(allTags[tag], params)
       });
+
 
       /* [NEW] add value of className variable to tag.className constant */
       tag.ClassName;
@@ -500,3 +504,6 @@
   console.log('=========');
 */
 }
+
+
+
