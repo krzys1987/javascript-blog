@@ -222,8 +222,8 @@
     }
 
     /* [DONE] execute function calculateTagParams */
-    calculateTagParams();
-    console.log(calculateTagParams);
+    //calculateTagParams();
+    //console.log(calculateTagParams);
     console.log(params); //Show min and max? But why?
 
     /* [NEW] find list of tags in right column */
