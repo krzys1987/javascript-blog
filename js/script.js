@@ -258,7 +258,7 @@
         className = 'tag-size-2';
       }
 
-      //[NEW] add tag to obeject allTagsData
+      //[NEW] add tag to obeject allTagsData.tag.array
       allTagsData.tags.push({
         tag: tag,
         className: className //don't understand why
