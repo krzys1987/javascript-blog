@@ -199,7 +199,6 @@
         //create a constant linkHTML
         const linkHTML = templates.articleLink(linkHTMLData);
 
-
         /* [DONE] add generated code to html variable */
         html = html + linkHTML;
 
@@ -268,11 +267,6 @@
       /* [NEW] add value of className variable to tag.className constant */
       tag.ClassName;
 
-      /*[NEW] add HTML from allTagsHTML to tagList */
-      //tagList.innerHTML = allTagsHTML;
-      tagList.innerHTML = templates.tagCloudLink(allTagsData);
-
-
       /* [NEW] calculateTagClass
       const calculateTagClass = function (count, params) {
         classNumber = Math.floor( 0.5 * 5 + 1 );
@@ -289,6 +283,10 @@
       /* [NEW] generate code of a link and add it to allTagsHTML */
       allTagsHTML += '<li><a href="#tag-' + tag + '"><span>' + tag + ' (' + allTags[tag] + ')</span></a></li>';
     }
+
+    /*[NEW] add HTML from allTagsHTML to tagList */
+    //tagList.innerHTML = allTagsHTML;
+    tagList.innerHTML = templates.tagCloudLink(allTagsData);
 
 
     /* [NEW] END LOOP: for each tag in allTags: */
