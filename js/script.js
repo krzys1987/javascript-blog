@@ -231,7 +231,7 @@
     /* [NEW] create variable for all links HTML code */
     //let allTagsHTML = '';
 
-    /* [NEW] create a constant an allTagsData with an tag object */
+    /* [NEW] create a constant an allTagsData with an tag object contains array */
     const allTagsData = {tags: []};
 
     /* [NEW] using tags to change display */
