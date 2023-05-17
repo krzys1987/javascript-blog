@@ -259,6 +259,12 @@
         className = 'tag-size-2';
       }
 
+      //[NEW] add tag to obeject allTagsData
+      allTagsData.tags.push({
+        tag: tag,
+        className: className //don't understand why
+      });
+
       /* [NEW] add value of className variable to tag.className constant */
       tag.ClassName;
 
