@@ -137,6 +137,7 @@
       max: 0,
     };
 
+    /*
     const calculateTagParams = function(){
       for(const tag in allTags){
         if(allTags[tag] < params.min){
