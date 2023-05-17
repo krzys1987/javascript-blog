@@ -270,6 +270,8 @@
               <li><a href="#{{ id }}"><span>{{ title }}</span></a></li>
             </script>
             <script id="template-author-article" type="text/x-handlebars-template">
+              {{#each authors}}
+              <li><a href="#author-{{ author }}" class="{{className}}"><span>{{ author }}</span></a></li>
               <li><a href="#{{ id }}"><span>{{ title }}</span></a></li>
             </script>
             <!-- empty object tagCloudLink -->
