@@ -136,7 +136,6 @@
       max: 10,
     };
 
-
     const calculateTagParams = function(){
       for(const tag in allTags){
         if(allTags[tag] < params.min){
@@ -148,7 +147,7 @@
           console.log(tag + ' is used');
         }
       }
-      return params; //honestly it wasn't my idea, is return executable at all?
+      return params;
     };
 
     /* [NEW] create a new variable allTags with an empty object */
@@ -260,13 +259,9 @@
     }
 
     /*[NEW] add HTML from allTagsHTML to tagList */
-    //tagList.innerHTML = allTagsHTML;
     tagList.innerHTML = templates.tagCloudLink(allTagsData);
 
-
     /* [NEW] END LOOP: for each tag in allTags: */
-
-
 
   };
 
@@ -444,34 +439,4 @@
 
   addClickListenersToAuthors();
 
-  /* [NEW] using a Templates */
-
-  /*
-  const tplHelloSource = document.querySelector('#template-hello').innerHTML;
-
-  const tplHello = Handlebars.compile(tplHelloSource);
-  const dataHello = {firstName: 'John', lastName: 'Smith'};
-  let generatedHTML = tplHello(dataHello);
-
-  const targetElement = document.body;
-  targetElement.insertAdjacentHTML('beforeend', generatedHTML);
-
-  /* template filled with data fe */
-  /*
-  const dataHello2 = {firstName: 'Maria', lastName: 'Jones'};
-  generatedHTML = tplHello(dataHello2);
-  targetElement.insertAdjacentHTML('beforeend', generatedHTML);
-
-  console.log('tplHello:');
-  console.log(tplHelloSource);
-  console.log('=========');
-
-  console.log('dataHello:');
-  console.log(dataHello);
-  console.log('=========');
-
-  console.log('generatedHTML:');
-  console.log(generatedHTML);
-  console.log('=========');
-*/
 }
