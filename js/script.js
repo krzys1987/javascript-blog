@@ -132,8 +132,8 @@
 
     //[NEW] set an object parameters
     const params = {
-      min: 999999,
-      max: 0,
+      min: 2,
+      max: 8,
     };
 
     /*
@@ -150,17 +150,6 @@
       }
       return params; //honestly it wasn't my idea, is return executable at all?
     };
-
-    /*
-    const calculateTagClass = function (count, params) {
-    const normalizedCount = count - params.min;
-    const normalizedMax = params.max - params.min;
-    const percentage = normalizedCount / normalizedMax;
-    const classNumber = Math.floor(percentage * (opts.tagSizes.count - 1) + 1);
-    const className = opts.tagSizes.classPrefix + classNumber;
-    return className;
-    };
-    */
 
     /* [NEW] create a new variable allTags with an empty object */
     let allTags = { };
@@ -242,20 +231,36 @@
 
     /* [NEW] START LOOP: for each tag in allTags: */
     for(let tag in allTags){
-      if (allTags[tag] > params.max/2) {
-        className = 'tag-size-4';
-      }
-      else if (allTags[tag] < params.max/4) {
-        className = 'tag-size-1';
-      }
-      else if (allTags[tag] > params.max/1.5) {
-        className = 'tag-size-5';
-      }
-      else if (allTags[tag] < params.max/3) {
-        className = 'tag-size-3';
-      } else {
-        className = 'tag-size-2';
-      }
+      /* [NEW] calculateTagClass
+      const calculateTagClass = function (count, params) {
+        let classNumber = 0; //what for?
+
+        classNumber = Math.floor( 0.5 * 5 + 1 );
+        classNumber = Math.floor( 0.5 * opts.tagSizes.count + 1 );
+        classNumber = Math.floor( ( 4 / 8 ) * opts.tagSizes.count + 1 );
+        classNumber = Math.floor( ( (6 - 2) / (10 - 2) ) * opts.tagSizes.count + 1 );
+        classNumber = Math.floor( ( (count - 2) / (10 - 2) ) * opts.tagSizes.count + 1 );
+        classNumber = Math.floor( ( (count - 2) / (params.max - 2) ) * opts.tagSizes.count + 1 );
+        classNumber = Math.floor( ( (count - params.min) / (params.max - 2) ) * opts.tagSizes.count + 1 );
+        classNumber = Math.floor( ( (count - params.min) / (params.max - params.min) ) * opts.tagSizes.count + 1 );
+
+        return CloudClassPrefix;
+      }; */
+
+      // if (allTags[tag] > params.max/2) {
+      //   className = 'tag-size-4';
+      // }
+      // else if (allTags[tag] < params.max/4) {
+      //   className = 'tag-size-1';
+      // }
+      // else if (allTags[tag] > params.max/1.5) {
+      //   className = 'tag-size-5';
+      // }
+      // else if (allTags[tag] < params.max/3) {
+      //   className = 'tag-size-3';
+      // } else {
+      //   className = 'tag-size-2';
+      // }
 
       //[NEW] add tag to obeject allTagsData.tag.array
       allTagsData.tags.push({
@@ -265,19 +270,6 @@
 
       /* [NEW] add value of className variable to tag.className constant */
       tag.ClassName;
-
-      /* [NEW] calculateTagClass
-      const calculateTagClass = function (count, params) {
-        classNumber = Math.floor( 0.5 * 5 + 1 );
-        classNumber = Math.floor( 0.5 * cloudClassCount + 1 );
-        classNumber = Math.floor( ( 4 / 8 ) * cloudClassCount + 1 );
-        classNumber = Math.floor( ( (6 - 2) / (10 - 2) ) * cloudClassCount + 1 );
-        classNumber = Math.floor( ( (count - 2) / (10 - 2) ) * cloudClassCount + 1 );
-        classNumber = Math.floor( ( (count - 2) / (params.max - 2) ) * cloudClassCount + 1 );
-        classNumber = Math.floor( ( (count - params.min) / (params.max - 2) ) * cloudClassCount + 1 );
-        classNumber = Math.floor( ( (count - params.min) / (params.max - params.min) ) * cloudClassCount + 1 );
-        CloudClassPrefix;
-      }; */
 
       /* [NEW] generate code of a link and add it to allTagsHTML */
       allTagsHTML += '<li><a href="#tag-' + tag + '"><span>' + tag + ' (' + allTags[tag] + ')</span></a></li>';
