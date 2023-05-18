@@ -1,7 +1,6 @@
 {
   //Strict Mode
   'use strict';
-  //debugger; //run where the problem exist
 
   //[DONE] define sript options
   const select = {
