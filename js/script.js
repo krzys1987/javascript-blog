@@ -133,10 +133,10 @@
     //[NEW] set an object parameters
     const params = {
       min: 2,
-      max: 8,
+      max: 10,
     };
 
-    /*
+
     const calculateTagParams = function(){
       for(const tag in allTags){
         if(allTags[tag] < params.min){
