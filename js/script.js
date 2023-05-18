@@ -231,7 +231,7 @@
     /* [NEW] START LOOP: for each tag in allTags: */
     for(let tag in allTags){
       /* [NEW] calculateTagClass */
-      const calculateTagClass = function (count, params) {
+      const generateTagClassName = function (count, params) {
         let classNumber = 0; //what for?
 
         classNumber = Math.floor( 0.5 * 5 + 1 );
@@ -246,25 +246,10 @@
         return opts.tagSizes.classPrefix + classNumber; //HAVE TO FIGURE OUT HOW WORKS - what is data
       };
 
-      // if (allTags[tag] > params.max/2) {
-      //   className = 'tag-size-4';
-      // }
-      // else if (allTags[tag] < params.max/4) {
-      //   className = 'tag-size-1';
-      // }
-      // else if (allTags[tag] > params.max/1.5) {
-      //   className = 'tag-size-5';
-      // }
-      // else if (allTags[tag] < params.max/3) {
-      //   className = 'tag-size-3';
-      // } else {
-      //   className = 'tag-size-2';
-      // }
-
       //[NEW] add tag to obeject allTagsData.tag.array
       allTagsData.tags.push({
         tag: tag,
-        className: className //don't understand why
+        className: generateTagClassName(allTags[tag], params),
       });
 
       /* [NEW] add value of className variable to tag.className constant */
