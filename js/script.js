@@ -243,7 +243,7 @@
         classNumber = Math.floor( ( (count - params.min) / (params.max - 2) ) * opts.tagSizes.count + 1 );
         classNumber = Math.floor( ( (count - params.min) / (params.max - params.min) ) * opts.tagSizes.count + 1 );
 
-        return opts.tagSizes.classPrefixCloudClassPrefix + classNumber; //HAVE TO FIGURE OUT HOW WORKS - what is data
+        return opts.tagSizes.classPrefix + classNumber; //HAVE TO FIGURE OUT HOW WORKS - what is data
       };
 
       // if (allTags[tag] > params.max/2) {
