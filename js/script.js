@@ -230,7 +230,7 @@
 
     /* [NEW] START LOOP: for each tag in allTags: */
     for(let tag in allTags){
-      /* [NEW] calculateTagClass
+      /* [NEW] calculateTagClass */
       const calculateTagClass = function (count, params) {
         let classNumber = 0; //what for?
 
@@ -243,8 +243,8 @@
         classNumber = Math.floor( ( (count - params.min) / (params.max - 2) ) * opts.tagSizes.count + 1 );
         classNumber = Math.floor( ( (count - params.min) / (params.max - params.min) ) * opts.tagSizes.count + 1 );
 
-        return CloudClassPrefix;
-      }; */
+        return opts.tagSizes.classPrefixCloudClassPrefix + classNumber; //HAVE TO FIGURE OUT HOW WORKS - what is data
+      };
 
       // if (allTags[tag] > params.max/2) {
       //   className = 'tag-size-4';
