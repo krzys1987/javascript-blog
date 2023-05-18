@@ -202,16 +202,13 @@
       }
 
       /* [DONE] insert HTML of all the links into the tags wrapper */
-
       tagWrapper.innerHTML = html;
 
       /* [DONE] END LOOP: for every article: */
     }
 
     /* [DONE] execute function calculateTagParams */
-    //calculateTagParams();
-    //console.log(calculateTagParams);
-    console.log(params); //Show min and max? But why?
+    console.log(params); //Show min and max
 
     /* [NEW] find list of tags in right column */
     const tagList = document.querySelector(select.listOf.tags);
@@ -220,7 +217,9 @@
     let allTagsHTML = '';
 
     /* [NEW] create a constant an allTagsData with an tag object contains array */
-    const allTagsData = {tags: []};
+    const allTagsData = {
+      tags: []
+    };
 
     /* [NEW] using tags to change display */
 
